@@ -18,7 +18,7 @@
                     colors: {
                         primary: '#0D1B2A',
                         secondary: '#1B263B',
-                        accent: '#009EE0', /* Синий из логотипа image001.png */
+                        accent: '#009EE0',
                         accentDark: '#007CA8',
                         neutralBg: '#FFFFFF',
                         lightBg: '#F7F9FC',
@@ -64,7 +64,7 @@
 </head>
 <body class="bg-neutralBg overflow-x-hidden">
 
-    <!-- Кастомное уведомление (Вместо alert) -->
+    <!-- Кастомное уведомление -->
     <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 ease-out max-w-md w-full bg-primary border-l-4 border-accent shadow-2xl p-4 rounded-xl flex items-start gap-3 pointer-events-none">
         <div class="text-accent shrink-0">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -85,7 +85,7 @@
                     Инжиниринговый центр активен
                 </span>
                 <span>Сертификация менеджмента качества ISO 9001:2015</span>
-                <span>Статус интегратора: авторизованный дистрибьютор SAMES Kremlin</span>
+                <span>Статус интегратора: авторизованный дистрибьютор SAMES Kremlin / YASKAWA</span>
             </div>
             <div class="flex items-center gap-6">
                 <a href="mailto:info@novatek-e.com" class="hover:text-accent transition-colors flex items-center gap-1">
@@ -101,7 +101,6 @@
 
         <!-- Главное меню навигации -->
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Логотип компании с использованием файла image001.png -->
             <a href="#" class="flex items-center gap-3 group">
                 <img src="image001.png" alt="НОВАТЕК Логотип" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo-header').classList.remove('hidden')">
                 <div id="fallback-logo-header" class="hidden flex items-center">
@@ -132,7 +131,7 @@
                             <h5 class="font-bold text-primary text-sm flex items-center gap-2">
                                 <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Роботизированная окраска
                             </h5>
-                            <p class="text-xs text-mutedText mt-1">Интеграция 6-осевых роботов-манипуляторов SAMES и FANUC.</p>
+                            <p class="text-xs text-mutedText mt-1">Интеграция 6-осевых роботов-манипуляторов SAMES и YASKAWA.</p>
                         </a>
                         <a href="#equipment" class="p-3 hover:bg-lightBg rounded-lg transition-colors block">
                             <h5 class="font-bold text-primary text-sm flex items-center gap-2">
@@ -149,12 +148,8 @@
                     </div>
                 </div>
                 <a href="#solutions" class="text-primary hover:text-accent font-semibold text-[15px] transition-colors">Технологии</a>
-                <a href="#ai-assistant" class="text-accent hover:text-accentDark font-bold text-[15px] transition-colors flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span> ИИ-Консультант
-                </a>
-                <a href="#equipment" class="text-primary hover:text-accent font-semibold text-[15px] transition-colors">Оборудование</a>
                 <a href="#projects" class="text-primary hover:text-accent font-semibold text-[15px] transition-colors">Проекты</a>
-                <a href="#timeline" class="text-primary hover:text-accent font-semibold text-[15px] transition-colors">Этапы работы</a>
+                <a href="#timeline" class="text-primary hover:text-accent font-semibold text-[15px] transition-colors">Процесс</a>
                 <a href="#faq" class="text-primary hover:text-accent font-semibold text-[15px] transition-colors">FAQ</a>
             </nav>
 
@@ -178,13 +173,10 @@
         <!-- Мобильное выпадающее меню -->
         <div id="mobileMenu" class="hidden lg:hidden bg-primary border-t border-secondary text-white absolute left-0 w-full shadow-2xl p-6 transition-all duration-300">
             <nav class="flex flex-col gap-4">
-                <a href="#solutions" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Технологии</a>
-                <a href="#ai-assistant" onclick="toggleMobileMenu()" class="text-lg text-accent font-bold py-2 border-b border-white/5 flex items-center gap-2">
-                    <span class="w-2 h-2 bg-accent rounded-full animate-ping"></span> ИИ-Консультант
-                </a>
                 <a href="#equipment" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Оборудование</a>
+                <a href="#solutions" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Технологии</a>
                 <a href="#projects" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Проекты</a>
-                <a href="#timeline" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Этапы работы</a>
+                <a href="#timeline" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Процесс</a>
                 <a href="#faq" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">FAQ</a>
                 <div class="flex flex-col gap-3 pt-4">
                     <a href="#calculator" onclick="toggleMobileMenu()" class="text-center border border-accent text-accent font-bold py-3 rounded-xl text-sm">
@@ -200,12 +192,10 @@
 
     <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO) -->
     <section class="relative min-h-[95vh] flex items-center bg-primary overflow-hidden py-16">
-        <!-- Высокотехнологичная роботизированная линия НОВАТЕК с резервным адресом -->
         <img src="watermarked_img_7357259969837753622.png" alt="Промышленная линия" 
              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1920&q=80'"
              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
         
-        <!-- Сетка чертежного чертежа (Инженерная графика) -->
         <div class="absolute inset-0 bg-[linear-gradient(rgba(0,158,224,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(0,158,224,0.08)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60"></div>
         
         <div class="relative max-w-7xl mx-auto px-6 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -270,7 +260,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-400 text-sm">Успешных проектов</span>
-                        <span class="text-white font-extrabold text-xl text-glow">100+ заводов</span>
+                        <span class="text-white font-extrabold text-xl text-glow">10+ заводов</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-400 text-sm">География работы</span>
@@ -287,7 +277,7 @@
                     <div class="flex gap-4 items-center justify-start opacity-80 mt-2">
                         <span class="text-white text-xs font-bold border border-white/20 px-2 py-0.5 rounded">SAMES</span>
                         <span class="text-white text-xs font-bold border border-white/20 px-2 py-0.5 rounded">Kremlin</span>
-                        <span class="text-white text-xs font-bold border border-white/20 px-2 py-0.5 rounded">FANUC</span>
+                        <span class="text-white text-xs font-bold border border-white/20 px-2 py-0.5 rounded">YASKAWA</span>
                     </div>
                 </div>
             </div>
@@ -308,9 +298,8 @@
                 </p>
             </div>
 
-            <!-- Сетка из 6 карточек проблем с новыми детализированными SVG-иконками -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Карта 1: Нестабильное качество -->
+                <!-- Карта 1 -->
                 <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 space-y-4">
                     <div class="w-12 h-12 bg-red-50 text-red-500 rounded-lg flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -326,7 +315,7 @@
                     </p>
                 </div>
 
-                <!-- Карта 2: Высокий процент брака -->
+                <!-- Карта 2 -->
                 <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 space-y-4">
                     <div class="w-12 h-12 bg-red-50 text-red-500 rounded-lg flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -341,7 +330,7 @@
                     </p>
                 </div>
 
-                <!-- Карта 3: Низкая производительность -->
+                <!-- Карта 3 -->
                 <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 space-y-4">
                     <div class="w-12 h-12 bg-red-50 text-red-500 rounded-lg flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -358,7 +347,7 @@
                     </p>
                 </div>
 
-                <!-- Карта 4: Человеческий фактор -->
+                <!-- Карта 4 -->
                 <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 space-y-4">
                     <div class="w-12 h-12 bg-red-50 text-red-500 rounded-lg flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -372,7 +361,7 @@
                     </p>
                 </div>
 
-                <!-- Карта 5: Долгая сушка деталей -->
+                <!-- Карта 5 -->
                 <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 space-y-4">
                     <div class="w-12 h-12 bg-red-50 text-red-500 rounded-lg flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -387,7 +376,7 @@
                     </p>
                 </div>
 
-                <!-- Карта 6: Отсутствие автоматизации -->
+                <!-- Карта 6 -->
                 <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 space-y-4">
                     <div class="w-12 h-12 bg-red-50 text-red-500 rounded-lg flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -408,12 +397,9 @@
     <section id="solutions" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                
-                <!-- Левая сторона: Высокоэффективная визуализация промышленного окрасочного робота -->
                 <div class="lg:col-span-5 relative group">
                     <div class="absolute -inset-4 bg-accent/10 rounded-2xl scale-95 group-hover:scale-100 transition-transform duration-300"></div>
                     <div class="relative bg-primary overflow-hidden rounded-2xl border border-gray-200/50 shadow-xl aspect-square">
-                        <!-- Роботизированная окрасочная кабина с резервным адресом -->
                         <img src="watermarked_img_7357259969837753622.png" alt="Окрасочный робот за работой" 
                              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80'"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -425,7 +411,6 @@
                     </div>
                 </div>
 
-                <!-- Правая сторона: Преимущества и этапы инжиниринга -->
                 <div class="lg:col-span-7 space-y-8">
                     <div class="space-y-3">
                         <span class="text-accent font-bold text-xs uppercase tracking-widest">Индивидуальный подход</span>
@@ -437,7 +422,6 @@
                         </p>
                     </div>
 
-                    <!-- Инженерная цепочка шагов -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div class="flex gap-4">
                             <div class="w-8 h-8 rounded-full bg-accent/10 text-accent font-bold text-sm flex items-center justify-center shrink-0">1</div>
@@ -483,105 +467,6 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ С ИИ: ИИ-АСИСТЕНТ ТЕХНОЛОГА НОВАТЕК (Gemini Integration) -->
-    <section id="ai-assistant" class="py-24 bg-primary text-white relative overflow-hidden border-t border-b border-white/10">
-        <!-- Сетка чертежа -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(0,158,224,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,158,224,0.04)_1px,transparent_1px)] bg-[size:30px_30px] opacity-50"></div>
-        
-        <div class="relative max-w-7xl mx-auto px-6 z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                <!-- Описание и пресеты ИИ -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 text-accent font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">
-                        <span class="w-2.5 h-2.5 rounded-full bg-accent animate-pulse"></span>
-                        Интеграция ИИ: Gemini 3 Flash
-                    </span>
-                    <h2 class="text-white font-bold text-3xl sm:text-4xl tracking-tight leading-tight">
-                        ИИ-Ассистент Проектирования НОВАТЕК
-                    </h2>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Наш виртуальный технологический эксперт обучен на стандартах ISO 9001, принципах автоматизации Dürr/SAMES Kremlin и готов рассчитать технологию нанесения ЛКМ для вашего цеха.
-                    </p>
-
-                    <div class="space-y-3 pt-2">
-                        <span class="text-xs text-accent font-bold uppercase tracking-wider block">Быстрые сценарии анализа:</span>
-                        <div class="grid grid-cols-1 gap-2">
-                            <button onclick="setAiPrompt('Рассчитайте автоматическую линию окраски для металлических рам (1200х800 мм), выпуск 80 шт в смену. Жидкий ЛКМ.')" class="text-left bg-secondary/80 hover:bg-secondary border border-white/10 p-3 rounded-xl text-xs transition-all hover:border-accent text-gray-300 hover:text-white flex items-center justify-between group">
-                                <span>Рассчитать линию (80 рам / смену)</span>
-                                <svg class="w-4 h-4 text-accent opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </button>
-                            <button onclick="setAiPrompt('Какую систему фильтрации выбрать для окрасочной кабины при интенсивном распылении двухкомпонентных полиуретановых ЛКМ: сухую или водяную завесу? Напишите плюсы и минусы.')" class="text-left bg-secondary/80 hover:bg-secondary border border-white/10 p-3 rounded-xl text-xs transition-all hover:border-accent text-gray-300 hover:text-white flex items-center justify-between group">
-                                <span>Сравнение: Водяная vs Сухая фильтрация</span>
-                                <svg class="w-4 h-4 text-accent opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </button>
-                            <button onclick="setAiPrompt('Как уменьшить брак, связанный с пылью и шагренью на финишном покрытии при ручной окраске крупногабаритных деталей спецтехники? Дайте пошаговый чек-лист.')" class="text-left bg-secondary/80 hover:bg-secondary border border-white/10 p-3 rounded-xl text-xs transition-all hover:border-accent text-gray-300 hover:text-white flex items-center justify-between group">
-                                <span>Как снизить брак финишного покрытия</span>
-                                <svg class="w-4 h-4 text-accent opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Интерактивное окно вывода ИИ -->
-                <div class="lg:col-span-7 bg-secondary/90 border border-white/10 p-6 sm:p-8 rounded-2xl shadow-2xl flex flex-col space-y-6">
-                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="relative flex h-3 w-3">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
-                            </span>
-                            <h3 class="font-bold text-white text-base">Технологическая Экспертиза</h3>
-                        </div>
-                        <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400 bg-primary/60 px-3 py-1 rounded-full border border-white/5">
-                            NOVATEK AI Engine
-                        </span>
-                    </div>
-
-                    <!-- Окно вывода генерации -->
-                    <div id="aiResponseContainer" class="bg-primary/70 border border-white/5 p-5 rounded-xl text-sm leading-relaxed max-h-[320px] overflow-y-auto text-gray-300 min-h-[140px] flex flex-col justify-center items-center">
-                        <div id="aiPlaceholder" class="text-center space-y-3">
-                            <svg class="w-10 h-10 text-accent/40 mx-auto" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.43c2.148-.28 3.596-2.222 3.596-4.382v-3.79c0-2.16-1.448-4.102-3.596-4.382L9 2.096l.813 5.096L4.5 12l5.313 3.904z"></path></svg>
-                            <p class="text-xs text-gray-400 max-w-[280px]">Задайте свой вопрос или выберите готовый сценарий для мгновенного инженерного анализа.</p>
-                        </div>
-                        <div id="aiSpinner" class="hidden text-center space-y-4 py-8">
-                            <!-- Анимация технологического сканера -->
-                            <div class="relative w-16 h-16 mx-auto">
-                                <div class="absolute inset-0 rounded-full border-4 border-accent/20"></div>
-                                <div class="absolute inset-0 rounded-full border-4 border-t-accent animate-spin"></div>
-                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">
-                                    <span class="w-3 h-3 bg-accent rounded-full animate-ping"></span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-accent animate-pulse uppercase tracking-widest font-bold">Выполняется расчет параметров окраски...</p>
-                        </div>
-                        <div id="aiTextOutput" class="hidden text-left w-full space-y-4">
-                            <!-- Ответ ИИ запишется сюда динамически -->
-                        </div>
-                    </div>
-
-                    <!-- Форма ввода -->
-                    <div class="space-y-3">
-                        <div class="relative">
-                            <textarea id="aiUserInput" rows="3" class="w-full bg-primary/60 border border-white/10 p-4 rounded-xl text-sm text-white focus:outline-none focus:border-accent placeholder-gray-500 resize-none" placeholder="Опишите габариты ваших изделий, тип ЛКМ или нужный объем производства для мгновенного инженерного разбора..."></textarea>
-                            <span class="absolute bottom-3 right-3 text-[10px] text-gray-500">Gemini Pro API</span>
-                        </div>
-                        
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <button onclick="askCoatingEngineer()" class="flex-1 bg-accent hover:bg-accentDark text-white font-bold py-3.5 px-6 rounded-xl text-sm transition-colors flex items-center justify-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                Рассчитать с помощью ИИ
-                            </button>
-                            <button id="importAiBtn" onclick="importAiToMainForm()" disabled class="sm:w-auto bg-primary border border-white/10 text-gray-400 font-bold py-3.5 px-5 rounded-xl text-sm transition-all flex items-center justify-center gap-2 cursor-not-allowed hover:bg-primary/80">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 001.414 0l2.414-2.414a1 1 0 01.707-.293H20"></path></svg>
-                                Импортировать в ТЗ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- СЕКЦИЯ 4 — КАТЕГОРИИ ОБОРУДОВАНИЯ -->
     <section id="equipment" class="py-24 bg-lightBg border-t border-b border-gray-150">
         <div class="max-w-7xl mx-auto px-6">
@@ -596,9 +481,8 @@
                 </p>
             </div>
 
-            <!-- Сетка из 6 карточек категорий -->
+            <!-- Карточки категорий -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
                 <!-- Окрасочные кабины -->
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div class="p-6 space-y-4">
@@ -719,13 +603,13 @@
                     <div class="p-6 space-y-4">
                         <div class="h-48 rounded-lg overflow-hidden bg-primary relative">
                             <img src="watermarked_img_7357259969837753622.png" alt="Окрасочные роботы" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=600&q=80'"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-156370660941-20978e870e26?auto=format&fit=crop&w=600&q=80'"
                                  class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300">
-                            <span class="absolute bottom-3 left-3 bg-primary/90 text-white text-[11px] font-bold px-2 py-0.5 rounded uppercase">SAMES / FANUC</span>
+                            <span class="absolute bottom-3 left-3 bg-primary/90 text-white text-[11px] font-bold px-2 py-0.5 rounded uppercase">SAMES / YASKAWA</span>
                         </div>
                         <h4 class="text-primary font-bold text-xl">Роботизированные ячейки</h4>
                         <p class="text-mutedText text-sm leading-relaxed">
-                            6-осевые взрывозащищенные манипуляторы для сверхточного распыления ЛКМ на детали сложной геометрии. Сокращение перерасхода краски до 35%.
+                            6-осевые взрывозащищенные манипуляторы YASKAWA для сверхточного распыления ЛКМ на детали сложной геометрии. Сокращение перерасхода краски до 35%.
                         </p>
                     </div>
                     <div class="px-6 pb-6 pt-2 border-t border-gray-50 flex justify-between items-center">
@@ -736,7 +620,6 @@
                         <span class="text-xs text-mutedText font-medium">От 45 дней</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -746,7 +629,6 @@
         <div class="absolute inset-0 bg-[linear-gradient(rgba(0,158,224,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,158,224,0.05)_1px,transparent_1px)] bg-[size:30px_30px] opacity-40"></div>
         <div class="relative max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                
                 <!-- Описание слева -->
                 <div class="lg:col-span-5 space-y-6">
                     <span class="text-accent font-bold text-xs uppercase tracking-widest">Инженерный калькулятор v1.4</span>
@@ -769,7 +651,7 @@
                     <h3 class="font-bold text-lg text-primary border-b border-gray-100 pb-4">Конфигуратор ТЗ</h3>
                     
                     <div class="space-y-6">
-                        <!-- Параметр 1: Длина изделия -->
+                        <!-- Параметр 1 -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <label class="text-sm font-bold text-primary">Максимальная длина изделия (метров)</label>
@@ -778,7 +660,7 @@
                             <input type="range" id="lengthSlider" min="1" max="15" value="4" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent" oninput="calculateTechParams()">
                         </div>
 
-                        <!-- Параметр 2: Производительность -->
+                        <!-- Параметр 2 -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <label class="text-sm font-bold text-primary">Выпуск деталей в смену (шт)</label>
@@ -787,7 +669,7 @@
                             <input type="range" id="capacitySlider" min="5" max="300" step="5" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent" oninput="calculateTechParams()">
                         </div>
 
-                        <!-- Параметр 3: Тип краски -->
+                        <!-- Параметр 3 -->
                         <div>
                             <label class="text-sm font-bold text-primary block mb-2">Технология нанесения ЛКМ</label>
                             <select id="paintType" class="w-full border border-gray-200 p-3 rounded-xl text-sm focus:outline-none focus:border-accent" onchange="calculateTechParams()">
@@ -823,7 +705,6 @@
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 13l-7 7-7-7m14-6l-7 7-7-7"></path></svg>
                     </button>
                 </div>
-
             </div>
         </div>
     </section>
@@ -842,10 +723,7 @@
                 </p>
             </div>
 
-            <!-- Инфографика в стиле корпоративных метрик Dürr/Siemens -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- KPI 1 -->
                 <div class="border border-gray-100 p-8 rounded-xl bg-lightBg/50 hover:bg-white transition-colors duration-200 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-accent font-black text-5xl">до +150%</div>
@@ -856,7 +734,6 @@
                     </div>
                 </div>
 
-                <!-- KPI 2 -->
                 <div class="border border-gray-100 p-8 rounded-xl bg-lightBg/50 hover:bg-white transition-colors duration-200 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-accent font-black text-5xl">в 4 раза</div>
@@ -867,18 +744,16 @@
                     </div>
                 </div>
 
-                <!-- KPI 3 -->
                 <div class="border border-gray-100 p-8 rounded-xl bg-lightBg/50 hover:bg-white transition-colors duration-200 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-accent font-black text-5xl">до -35%</div>
                         <h4 class="text-primary font-bold text-lg">Экономия лакокрасочных материалов</h4>
                         <p class="text-mutedText text-sm leading-relaxed">
-                            Точные взрывозащищенные манипуляторы и дозаторы SAMES Kremlin наносят полимерный состав с точностью до микрона.
+                            Точные взрывозащищенные манипуляторы YASKAWA и дозаторы SAMES Kremlin наносят полимерный состав с точностью до микрона.
                         </p>
                     </div>
                 </div>
 
-                <!-- KPI 4 -->
                 <div class="border border-gray-100 p-8 rounded-xl bg-lightBg/50 hover:bg-white transition-colors duration-200 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-accent font-black text-5xl">до 80%</div>
@@ -889,7 +764,6 @@
                     </div>
                 </div>
 
-                <!-- KPI 5 -->
                 <div class="border border-gray-100 p-8 rounded-xl bg-lightBg/50 hover:bg-white transition-colors duration-200 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-accent font-black text-5xl">до -40%</div>
@@ -900,7 +774,6 @@
                     </div>
                 </div>
 
-                <!-- KPI 6 -->
                 <div class="border border-gray-100 p-8 rounded-xl bg-lightBg/50 hover:bg-white transition-colors duration-200 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="text-accent font-black text-5xl">100%</div>
@@ -910,7 +783,6 @@
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -931,10 +803,8 @@
                 </div>
             </div>
 
-            <!-- Сетка из 4 карт крупных проектов с онлайн-резервами -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <!-- Проект 1: Автомобилестроение -->
+                <!-- Проект 1 -->
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-200/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row group">
                     <div class="md:w-1/2 bg-primary overflow-hidden relative">
                         <img src="watermarked_img_7357259969837753622.png" alt="Завод ГАЗ" 
@@ -949,7 +819,7 @@
                         </div>
                         <div class="space-y-1.5 text-xs">
                             <div class="flex justify-between"><span class="text-mutedText">Задача:</span> <span class="font-bold text-primary">Исключить ручной напыл</span></div>
-                            <div class="flex justify-between"><span class="text-mutedText">Решение:</span> <span class="font-bold text-primary">6-осевой робот SAMES</span></div>
+                            <div class="flex justify-between"><span class="text-mutedText">Решение:</span> <span class="font-bold text-primary">6-осевой робот YASKAWA</span></div>
                             <div class="flex justify-between"><span class="text-mutedText">Результат:</span> <span class="font-bold text-accent">Выпуск +40%, Брак &lt;0.5%</span></div>
                         </div>
                         <a href="#contact" class="text-center bg-lightBg hover:bg-accent hover:text-white text-primary font-bold py-2.5 rounded-xl text-xs transition-all duration-200">
@@ -958,7 +828,7 @@
                     </div>
                 </div>
 
-                <!-- Проект 2: Тяжелое машиностроение -->
+                <!-- Проект 2 -->
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-200/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row group">
                     <div class="md:w-1/2 bg-primary overflow-hidden relative">
                         <img src="watermarked_img_7357259969837753622.png" alt="Тяжелое машиностроение" 
@@ -982,7 +852,7 @@
                     </div>
                 </div>
 
-                <!-- Проект 3: Сельхозмашиностроение -->
+                <!-- Проект 3 -->
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-200/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row group">
                     <div class="md:w-1/2 bg-primary overflow-hidden relative">
                         <img src="watermarked_img_7357259969837753622.png" alt="Сельхозтехника" 
@@ -1006,7 +876,7 @@
                     </div>
                 </div>
 
-                <!-- Проект 4: Металлоконструкции -->
+                <!-- Проект 4 -->
                 <div class="bg-white rounded-xl overflow-hidden border border-gray-200/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row group">
                     <div class="md:w-1/2 bg-primary overflow-hidden relative">
                         <img src="watermarked_img_7357259969837753622.png" alt="Завод металлоконструкций" 
@@ -1029,7 +899,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -1049,8 +918,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Преимущество 1 -->
                 <div class="bg-lightBg/50 border border-gray-100 p-8 rounded-xl space-y-3 hover:shadow-md transition-shadow duration-200">
                     <h4 class="font-bold text-primary text-lg">Высокий уровень инжиниринга</h4>
                     <p class="text-mutedText text-sm leading-relaxed">
@@ -1058,7 +925,6 @@
                     </p>
                 </div>
 
-                <!-- Преимущество 2 -->
                 <div class="bg-lightBg/50 border border-gray-100 p-8 rounded-xl space-y-3 hover:shadow-md transition-shadow duration-200">
                     <h4 class="font-bold text-primary text-lg">Полная ответственность под ключ</h4>
                     <p class="text-mutedText text-sm leading-relaxed">
@@ -1066,15 +932,13 @@
                     </p>
                 </div>
 
-                <!-- Преимущество 3 -->
                 <div class="bg-lightBg/50 border border-gray-100 p-8 rounded-xl space-y-3 hover:shadow-md transition-shadow duration-200">
                     <h4 class="font-bold text-primary text-lg">Сертифицированный партнер</h4>
                     <p class="text-mutedText text-sm leading-relaxed">
-                        Являемся авторизованным дистрибьютором и интегратором SAMES Kremlin (Франция) и FANUC, что обеспечивает доступ к оригинальным запчастям.
+                        Являемся авторизованным дистрибьютором и интегратором SAMES Kremlin (Франция) и YASKAWA Robotics, что обеспечивает доступ к оригинальным запчастям.
                     </p>
                 </div>
 
-                <!-- Преимущество 4 -->
                 <div class="bg-lightBg/50 border border-gray-100 p-8 rounded-xl space-y-3 hover:shadow-md transition-shadow duration-200">
                     <h4 class="font-bold text-primary text-lg">Кастомный конструктив</h4>
                     <p class="text-mutedText text-sm leading-relaxed">
@@ -1082,7 +946,6 @@
                     </p>
                 </div>
 
-                <!-- Преимущество 5 -->
                 <div class="bg-lightBg/50 border border-gray-100 p-8 rounded-xl space-y-3 hover:shadow-md transition-shadow duration-200">
                     <h4 class="font-bold text-primary text-lg">Оперативный сервис</h4>
                     <p class="text-mutedText text-sm leading-relaxed">
@@ -1090,97 +953,121 @@
                     </p>
                 </div>
 
-                <!-- Преимущество 6 -->
                 <div class="bg-lightBg/50 border border-gray-100 p-8 rounded-xl space-y-3 hover:shadow-md transition-shadow duration-200">
                     <h4 class="font-bold text-primary text-lg">Обучение персонала</h4>
                     <p class="text-mutedText text-sm leading-relaxed">
                         Проводим сертифицированное обучение операторов и главных технологов правилам безопасной эксплуатации, обслуживания и программирования роботов.
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 8 — ЭТАПЫ РАБОТЫ -->
-    <section id="timeline" class="py-24 bg-lightBg border-t border-b border-gray-200/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                <span class="text-accent font-bold text-xs uppercase tracking-widest">Прозрачное ведение проекта</span>
-                <h2 class="text-primary font-bold text-3xl sm:text-4xl tracking-tight">
-                    Этапы реализации вашего промышленного проекта
-                </h2>
-                <div class="w-16 h-1 bg-accent mx-auto rounded"></div>
-                <p class="text-mutedText text-base">
-                    Пошаговая система проектного контроля гарантирует сдачу линии окраски строго в оговоренные контрактом сроки.
-                </p>
-            </div>
+    <!-- СЕКЦИЯ 8 — ПРОЦЕСС ПРОЕКТА (8 ЭТАПОВ) -->
+    <section id="timeline" class="py-24 bg-[#F8FAFC] border-t border-b border-gray-150">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <h2 class="text-primary font-bold text-3xl sm:text-4xl tracking-tight mb-20 text-left">
+                Процесс проекта
+            </h2>
 
-            <!-- Горизонтальный таймлайн (Enterprise Style) -->
             <div class="relative">
-                <!-- Линия пути -->
-                <div class="absolute top-[28px] left-[50px] right-[50px] h-[3px] bg-gray-200 hidden lg:block"></div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    
-                    <!-- Шаг 1 -->
-                    <div class="space-y-4 relative">
-                        <div class="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-3">
-                            <div class="w-14 h-14 rounded-xl bg-primary text-accent font-black text-lg flex items-center justify-center border-2 border-accent shrink-0 z-10 shadow-lg">
-                                01
-                            </div>
-                            <h4 class="text-primary font-bold text-base pt-1">ТЗ и Предпроект</h4>
+                <!-- Направляющая линия -->
+                <div class="absolute top-[26px] left-[5%] right-[5%] h-[2px] bg-gray-200 hidden md:block"></div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 md:gap-4">
+                    <!-- Шаг 01 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center font-bold text-sm text-primary relative z-10 mb-6 transition-colors group-hover:border-accent">
+                            01
                         </div>
-                        <p class="text-mutedText text-xs leading-relaxed pl-18 lg:pl-0">
-                            Сбор исходных данных по размерам заготовок, ЛКМ, энергоносителям и производительности. Создание ТЗ.
+                        <h4 class="font-bold text-primary text-sm mb-2">Запрос</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">
+                            Оставьте заявку с описанием производственных требований через нашу инженерную форму.
                         </p>
                     </div>
 
-                    <!-- Шаг 2 -->
-                    <div class="space-y-4 relative">
-                        <div class="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-3">
-                            <div class="w-14 h-14 rounded-xl bg-primary text-white font-black text-lg flex items-center justify-center border-2 border-secondary shrink-0 z-10">
-                                02
-                            </div>
-                            <h4 class="text-primary font-bold text-base pt-1">3D-Проектирование</h4>
+                    <!-- Шаг 02 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center font-bold text-sm text-primary relative z-10 mb-6 transition-colors group-hover:border-accent">
+                            02
                         </div>
-                        <p class="text-mutedText text-xs leading-relaxed pl-18 lg:pl-0">
-                            Разработка детального проекта вентиляции, рекуперации тепла, трасс конвейера и 3D-модели окрасочного цеха.
+                        <h4 class="font-bold text-primary text-sm mb-2">Аудит</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">
+                            Аудит на объекте: изучение существующего процесса, производственной площадки и целевых показателей.
                         </p>
                     </div>
 
-                    <!-- Шаг 3 -->
-                    <div class="space-y-4 relative">
-                        <div class="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-3">
-                            <div class="w-14 h-14 rounded-xl bg-primary text-white font-black text-lg flex items-center justify-center border-2 border-secondary shrink-0 z-10">
-                                03
-                            </div>
-                            <h4 class="text-primary font-bold text-base pt-1">Сборка и Поставка</h4>
+                    <!-- Шаг 03 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center font-bold text-sm text-primary relative z-10 mb-6 transition-colors group-hover:border-accent">
+                            03
                         </div>
-                        <p class="text-mutedText text-xs leading-relaxed pl-18 lg:pl-0">
-                            Изготовление панелей кабин, окрасочных постов, систем управления и доставка спецоборудования SAMES на объект.
+                        <h4 class="font-bold text-primary text-sm mb-2">Техническая концепция</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">
+                            Инженерная команда разрабатывает системы с 3D-планированием и спецификациями.
                         </p>
                     </div>
 
-                    <!-- Шаг 4 -->
-                    <div class="space-y-4 relative">
-                        <div class="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-3">
-                            <div class="w-14 h-14 rounded-xl bg-accent text-white font-black text-lg flex items-center justify-center border-2 border-accent shrink-0 z-10 shadow-lg shadow-accent/20">
-                                04
-                            </div>
-                            <h4 class="text-primary font-bold text-base pt-1">Шеф-монтаж и ПНР</h4>
+                    <!-- Шаг 04 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center font-bold text-sm text-primary relative z-10 mb-6 transition-colors group-hover:border-accent">
+                            04
                         </div>
-                        <p class="text-mutedText text-xs leading-relaxed pl-18 lg:pl-0">
-                            Физический монтаж панелей, воздуховодов, интеграция КИПиА, калибровка факела распыла, тестовый пуск партии.
+                        <h4 class="font-bold text-primary text-sm mb-2">Коммерческое предложение</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">
+                            Предложение с фиксированной ценой, графиком проекта, контрольными точками и условиями оплаты.
                         </p>
                     </div>
 
+                    <!-- Шаг 05 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center font-bold text-sm text-primary relative z-10 mb-6 transition-colors group-hover:border-accent">
+                            05
+                        </div>
+                        <h4 class="font-bold text-primary text-sm mb-2">Производство</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">
+                            Оборудование производится на нашем заводе. Клиент получает обновления на каждом этапе производства.
+                        </p>
+                    </div>
+
+                    <!-- Шаг 06 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center font-bold text-sm text-primary relative z-10 mb-6 transition-colors group-hover:border-accent">
+                            06
+                        </div>
+                        <h4 class="font-bold text-primary text-sm mb-2">Монтажные работы</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">
+                            Монтажная команда НОВАТЕК выполняет все механические и электротехнические работы на объекте.
+                        </p>
+                    </div>
+
+                    <!-- Шаг 07 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center font-bold text-sm text-primary relative z-10 mb-6 transition-colors group-hover:border-accent">
+                            07
+                        </div>
+                        <h4 class="font-bold text-primary text-sm mb-2">Пусконаладка</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">
+                            Запуск системы, настройка, обучение операторов и передача полного комплекта документации.
+                        </p>
+                    </div>
+
+                    <!-- Шаг 08 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center font-bold text-sm text-primary relative z-10 mb-6 transition-colors group-hover:border-accent">
+                            08
+                        </div>
+                        <h4 class="font-bold text-primary text-sm mb-2">Сопровождение</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">
+                            Плановое обслуживание, дистанционная диагностика и поставка запасных частей на весь срок службы.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 9 — СЕКЦИЯ ДОВЕРИЯ (DARK BACKGROUND) -->
+    <!-- СЕКЦИЯ 9 — СЕКЦИЯ ДОВЕРИЯ -->
     <section class="py-24 bg-primary text-white relative overflow-hidden">
         <img src="watermarked_img_7357259969837753622.png" alt="Промышленная линия" 
              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1920&q=80'"
@@ -1196,15 +1083,15 @@
                 </p>
             </div>
 
-            <!-- Сетка из логотипов (Стилизованная под Siemens/ABB монохромную сетку) -->
+            <!-- Сетка партнеров -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 items-center justify-items-center opacity-65">
                 <span class="text-white font-black text-xl tracking-widest border border-white/10 px-6 py-4 rounded-xl">SAMES Kremlin</span>
-                <span class="text-white font-black text-xl tracking-widest border border-white/10 px-6 py-4 rounded-xl">FANUC Robotics</span>
+                <span class="text-white font-black text-xl tracking-widest border border-white/10 px-6 py-4 rounded-xl">YASKAWA</span>
                 <span class="text-white font-black text-xl tracking-widest border border-white/10 px-6 py-4 rounded-xl">ISO 9001:2015</span>
                 <span class="text-white font-black text-xl tracking-widest border border-white/10 px-6 py-4 rounded-xl">НОВАТЕК</span>
             </div>
 
-            <!-- Документы качества и крупные числа -->
+            <!-- Метрики качества -->
             <div class="border-t border-white/10 pt-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                 <div class="space-y-2">
                     <div class="text-accent font-black text-5xl text-glow">15+ лет</div>
@@ -1212,7 +1099,7 @@
                     <p class="text-xs text-gray-400 max-w-[260px] mx-auto">Инжиниринговое бюро непрерывно работает на рынке проектирования окраски с 2011 года.</p>
                 </div>
                 <div class="space-y-2">
-                    <div class="text-accent font-black text-5xl text-glow">100+ проектов</div>
+                    <div class="text-accent font-black text-5xl text-glow">10+ заводов</div>
                     <div class="text-sm font-bold uppercase text-gray-200">Реализовано в СНГ</div>
                     <p class="text-xs text-gray-400 max-w-[260px] mx-auto">Кабины, сушки и комплексные роботизированные конвейеры работают под нашим надзором.</p>
                 </div>
@@ -1225,7 +1112,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 10 — FAQ (АККОРДЕОНЫ) -->
+    <!-- СЕКЦИЯ 10 — FAQ -->
     <section id="faq" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16 space-y-4">
@@ -1236,9 +1123,7 @@
                 <div class="w-16 h-1 bg-accent mx-auto rounded"></div>
             </div>
 
-            <!-- Сетка аккордеонов -->
             <div class="space-y-4">
-                
                 <!-- Вопрос 1 -->
                 <div class="border border-gray-200 rounded-xl overflow-hidden">
                     <button class="w-full text-left p-6 font-bold text-primary flex justify-between items-center bg-lightBg/40 hover:bg-lightBg transition-colors" onclick="toggleAccordion(1)">
@@ -1268,7 +1153,7 @@
                         <svg id="faqIcon-3" class="w-5 h-5 text-mutedText transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="faqContent-3" class="hidden p-6 text-sm text-mutedText border-t border-gray-100 bg-white leading-relaxed">
-                        Да, НОВАТЕК Инжиниринг специализируется на глубокой модернизации (ретрофите) действующих окрасочных цехов. Наши программисты и инженеры могут установить роботизированные манипуляторы FANUC или SAMES на ваш текущий напольный или подвесной конвейер, отладить оптические датчики обнаружения деталей и внедрить систему автоматического дозирования ЛКМ.
+                        Да, НОВАТЕК Инжиниринг специализируется на глубокой модернизации (ретрофите) действующих окрасочных цехов. Наши программисты и инженеры могут установить роботизированные манипуляторы YASKAWA или SAMES на ваш текущий напольный или подвесной конвейер, отладить оптические датчики обнаружения деталей и внедрить систему автоматического дозирования ЛКМ.
                     </div>
                 </div>
 
@@ -1290,7 +1175,7 @@
                         <svg id="faqIcon-5" class="w-5 h-5 text-mutedText transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="faqContent-5" class="hidden p-6 text-sm text-mutedText border-t border-gray-100 bg-white leading-relaxed">
-                        Базовый гарантийный срок на металлоконструкции и корпуса кабин составляет 24 месяца с момента подписания акта ПНР. При заключении сервисного контракта на годовое обслуживание нашими бригадами гарантия расширяется до 5 лет на всю автоматику и приводные системы.
+                        Базовый гарантийный срок на металлоконструкции и корпуса кабин составляет 12 месяцев с момента подписания акта ПНР.
                     </div>
                 </div>
 
@@ -1304,12 +1189,11 @@
                         Мы поддерживаем склад критически важных комплектующих и сменных расходников (фильтрующие материалы, сопла, уплотнители, шланги высокого давления, насосы подачи ЛКМ). В регионах РФ наши сервисные инженеры выезжают к заказчикам на регулярной основе для проведения замен, калибровки автоматики и планового аудита.
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 11 — ФИНАЛЬНАЯ ЛИДОГЕНЕРАЦИЯ (ФОРМА ТЗ) -->
+    <!-- СЕКЦИЯ 11 — ФОРМА ТЗ -->
     <section id="contact" class="py-24 bg-lightBg border-t border-gray-200">
         <div class="max-w-5xl mx-auto px-6">
             <div class="bg-white rounded-2xl border border-gray-150 shadow-2xl p-8 sm:p-12 relative overflow-hidden">
@@ -1346,21 +1230,10 @@
                         </div>
                     </div>
 
-                    <!-- Поле импортированных расчетных параметров из калькулятора -->
+                    <!-- Поле параметров калькулятора -->
                     <div id="calcImportNotice" class="hidden p-4 bg-accent/5 border border-accent/20 rounded-xl text-xs text-accent">
                         <strong>✓ Параметры из калькулятора прикреплены к расчету:</strong> 
                         <span id="calcImportText">Длина изделия: 4м, Выпуск деталей: 50 шт, ЛКМ: Жидкий.</span>
-                    </div>
-
-                    <!-- Поле импортированных рекомендаций ИИ -->
-                    <div id="aiImportNotice" class="hidden p-4 bg-primary border border-accent/40 rounded-xl text-xs text-gray-200 space-y-2">
-                        <div class="flex items-center gap-2 text-accent">
-                            <span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
-                            <strong>✓ Спецификация ИИ-Ассистента прикреплена к ТЗ:</strong>
-                        </div>
-                        <div id="aiImportText" class="italic max-h-[80px] overflow-y-auto text-gray-400 pl-4 border-l border-white/20">
-                            <!-- Сюда вставляется краткое превью -->
-                        </div>
                     </div>
 
                     <div>
@@ -1368,7 +1241,7 @@
                         <textarea id="projectDetails" rows="5" class="w-full border border-gray-200 p-4 rounded-xl text-sm focus:outline-none focus:border-accent bg-lightBg/30" placeholder="Пожалуйста, укажите размеры деталей, материал (металл, пластик), тип ЛКМ (жидкая/порошковая краска) и ориентировочную доступную мощность электричества/газа."></textarea>
                     </div>
 
-                    <!-- Блок загрузки файлов -->
+                    <!-- Загрузка файлов -->
                     <div class="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center hover:border-accent transition-colors relative cursor-pointer" onclick="document.getElementById('fileInput').click()">
                         <input type="file" id="fileInput" class="hidden" onchange="handleFileSelect(event)">
                         <div class="space-y-2">
@@ -1378,12 +1251,10 @@
                         </div>
                     </div>
 
-                    <!-- Согласие -->
                     <p class="text-[11px] text-mutedText leading-relaxed">
                         Нажимая на кнопку, вы соглашаетесь на обработку ваших персональных данных в соответствии с ФЗ-152 и подтверждаете согласие с Политикой конфиденциальности НОВАТЕК Инжиниринг.
                     </p>
 
-                    <!-- Кнопка отправки -->
                     <button type="submit" class="w-full bg-accent hover:bg-accentDark text-white font-bold py-4 rounded-xl text-sm transition-all duration-200 shadow-xl shadow-accent/20 flex items-center justify-center gap-2">
                         Отправить запрос на расчет предложения
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -1393,11 +1264,9 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ (ENTERPRISE FOOTER) -->
+    <!-- ПОДВАЛ -->
     <footer class="bg-primary text-gray-400 text-sm py-16 border-t border-secondary">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
-            
-            <!-- Инжиниринг и бренд -->
             <div class="lg:col-span-2 space-y-4">
                 <a href="#" class="flex items-center gap-3">
                     <img src="image001.png" alt="НОВАТЕК Логотип" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo-footer').classList.remove('hidden')">
@@ -1413,7 +1282,6 @@
                 </div>
             </div>
 
-            <!-- Разделы оборудования -->
             <div class="space-y-4">
                 <h5 class="text-white font-bold text-xs uppercase tracking-wider">Оборудование</h5>
                 <ul class="space-y-2 text-xs">
@@ -1425,7 +1293,6 @@
                 </ul>
             </div>
 
-            <!-- Решения и услуги -->
             <div class="space-y-4">
                 <h5 class="text-white font-bold text-xs uppercase tracking-wider">Услуги</h5>
                 <ul class="space-y-2 text-xs">
@@ -1437,7 +1304,6 @@
                 </ul>
             </div>
 
-            <!-- Кейсы и отрасли -->
             <div class="space-y-4">
                 <h5 class="text-white font-bold text-xs uppercase tracking-wider">Проекты</h5>
                 <ul class="space-y-2 text-xs">
@@ -1449,7 +1315,6 @@
                 </ul>
             </div>
 
-            <!-- Контакты -->
             <div class="space-y-4">
                 <h5 class="text-white font-bold text-xs uppercase tracking-wider">Контакты</h5>
                 <ul class="space-y-2 text-xs text-gray-400">
@@ -1466,16 +1331,11 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </footer>
 
-    <!-- ВСТРОЕННЫЙ ИНТЕРАКТИВНЫЙ JAVASCRIPT -->
+    <!-- Скрипты интерфейса -->
     <script>
-        // ИИ-память для интеграции в ТЗ
-        let lastAiSpecification = '';
-
-        // Переключатель мобильного меню
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const openIcon = document.getElementById('menuIconOpen');
@@ -1492,56 +1352,47 @@
             }
         }
 
-        // Логика работы аккордеонов FAQ
         function toggleAccordion(id) {
             const content = document.getElementById(`faqContent-${id}`);
             const icon = document.getElementById(`faqIcon-${id}`);
             
             if (content.classList.contains('hidden')) {
                 content.classList.remove('hidden');
-                icon.classList.add('rotate-180');
-                icon.classList.add('text-accent');
+                icon.classList.add('rotate-180', 'text-accent');
             } else {
                 content.classList.add('hidden');
-                icon.classList.remove('rotate-180');
-                icon.classList.remove('text-accent');
+                icon.classList.remove('rotate-180', 'text-accent');
             }
         }
 
-        // Динамический расчет параметров калькулятора окрасочных цехов
         function calculateTechParams() {
             const length = parseInt(document.getElementById('lengthSlider').value);
             const capacity = parseInt(document.getElementById('capacitySlider').value);
             const paintType = document.getElementById('paintType').value;
 
-            // Обновление текстовых значений рядом со слайдерами
             document.getElementById('lengthVal').textContent = `${length} м`;
             document.getElementById('capacityVal').textContent = `${capacity} шт`;
 
-            // Математические модели расчета
             let airVolume = Math.round(length * 3500 + capacity * 60);
             let area = Math.round(length * 5.5 + (capacity / 12) + 10);
-            let heatPower = Math.round((airVolume * 0.00033) * 35); // Расчет кВт для дельты 35 градусов
+            let heatPower = Math.round((airVolume * 0.00033) * 35);
 
-            // Кастомизация расчетов на основе типа краски
             let paybackMonths = 12;
             if (paintType === 'powder') {
-                airVolume = Math.round(airVolume * 0.7); // Порошковым камерам требуется меньше притока воздуха
+                airVolume = Math.round(airVolume * 0.7);
                 area = Math.round(area * 0.9);
-                paybackMonths = 10; // Быстрее окупается из-за рекуперации порошка
+                paybackMonths = 10;
             } else if (paintType === 'water') {
-                heatPower = Math.round(heatPower * 1.3); // Требуется больше мощности на сушку влаги
+                heatPower = Math.round(heatPower * 1.3);
                 paybackMonths = 16;
             }
 
-            // Рендеринг результатов в интерфейс
             document.getElementById('airVolResult').textContent = `${airVolume.toLocaleString('ru-RU')} м³/ч`;
             document.getElementById('areaResult').textContent = `${area.toLocaleString('ru-RU')} м²`;
             document.getElementById('heatResult').textContent = `${heatPower.toLocaleString('ru-RU')} кВт`;
             document.getElementById('paybackResult').textContent = `${paybackMonths} месяцев`;
         }
 
-        // Функция импорта расчетных данных калькулятора в финальную B2B форму
         function applyCalcToForm() {
             const length = document.getElementById('lengthSlider').value;
             const capacity = document.getElementById('capacitySlider').value;
@@ -1551,18 +1402,13 @@
             const calcImportNotice = document.getElementById('calcImportNotice');
             const calcImportText = document.getElementById('calcImportText');
             
-            // Вставка текста во внутренний блок
             calcImportText.textContent = `Макс. длина детали: ${length} м, Объем деталей: ${capacity} шт/смену, Способ нанесения: ${paintTypeStr}.`;
             calcImportNotice.classList.remove('hidden');
 
-            // Скролл к блоку контактов
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-
-            // Показ всплывающего уведомления
             showToast('Параметры импортированы', 'Параметры калькулятора прикреплены к расчетной форме. Пожалуйста, укажите контактные данные.');
         }
 
-        // Логика кастомной системы уведомлений (Toast)
         function showToast(title, message) {
             const toast = document.getElementById('toastNotification');
             const toastTitle = document.getElementById('toastTitle');
@@ -1580,7 +1426,6 @@
             }, 5000);
         }
 
-        // Обработка выбора файла в ТЗ
         function handleFileSelect(event) {
             const file = event.target.files[0];
             const label = document.getElementById('fileNameLabel');
@@ -1590,167 +1435,17 @@
             }
         }
 
-        // Отправка формы обратной связи (B2B предложение)
         function handleFormSubmit(event) {
             event.preventDefault();
             
-            // Сброс формы и очистка индикатора файла
             document.getElementById('engineeringForm').reset();
             document.getElementById('calcImportNotice').classList.add('hidden');
-            document.getElementById('aiImportNotice').classList.add('hidden');
             document.getElementById('fileNameLabel').textContent = 'Загрузите файл Технического Задания (ТЗ) или чертежи';
             document.getElementById('fileNameLabel').classList.remove('text-accent');
 
-            // Показ успешного тоста отправки
             showToast('Предложение формируется', 'Инженер департамента окрасочных технологий НОВАТЕК свяжется с вами для согласования ТЗ.');
         }
 
-        // --- ИНТЕГРАЦИЯ GEMINI API ---
-
-        function setAiPrompt(text) {
-            document.getElementById('aiUserInput').value = text;
-            askCoatingEngineer();
-        }
-
-        async function askCoatingEngineer() {
-            const userText = document.getElementById('aiUserInput').value.trim();
-            if (!userText) {
-                showToast('Пустой запрос', 'Введите ваш технический вопрос или выберите готовый сценарий.');
-                return;
-            }
-
-            // Настройка UI перед запросом
-            const placeholder = document.getElementById('aiPlaceholder');
-            const spinner = document.getElementById('aiSpinner');
-            const outputBlock = document.getElementById('aiTextOutput');
-            const container = document.getElementById('aiResponseContainer');
-            const importBtn = document.getElementById('importAiBtn');
-
-            placeholder.classList.add('hidden');
-            spinner.classList.remove('hidden');
-            outputBlock.classList.add('hidden');
-            importBtn.disabled = true;
-            importBtn.classList.add('cursor-not-allowed', 'text-gray-400');
-            importBtn.classList.remove('text-accent', 'border-accent');
-
-            // Системный промпт инженера НОВАТЕК
-            const systemPrompt = "Вы — ведущий инженер-технолог компании НОВАТЕК Инжиниринг, авторитетный эксперт по промышленным покрасочным линиям и роботам (уровень Dürr, SAMES Kremlin, FANUC). Пишите авторитетные, технически строгие, емкие и структурированные ответы на русском языке. Используйте профессиональный B2B сленг (адгезия, полимеризация, рекуперация тепла, конвекция, КИПиА, ПНР). Ответ должен содержать маркированные списки, выводы и конкретные рекомендации оборудования НОВАТЕК.";
-            
-            const apiKey = ""; // Canvas подставит ключ автоматически в runtime
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-
-            const payload = {
-                contents: [{ parts: [{ text: userText }] }],
-                systemInstruction: {
-                    parts: [{ text: systemPrompt }]
-                }
-            };
-
-            let delay = 1000;
-            let success = false;
-            let responseData = null;
-
-            // Экспоненциальный откат (Exponential backoff)
-            for (let attempt = 0; attempt < 4; attempt++) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (response.status === 429) {
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        delay *= 2;
-                        continue;
-                    }
-
-                    if (response.ok) {
-                        responseData = await response.json();
-                        success = true;
-                        break;
-                    }
-                } catch (e) {
-                    console.debug('API Error on attempt', attempt + 1, e);
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    delay *= 2;
-                }
-            }
-
-            spinner.classList.add('hidden');
-
-            if (success && responseData) {
-                const candidate = responseData.candidates?.[0];
-                const text = candidate?.content?.parts?.[0]?.text;
-                if (text) {
-                    lastAiSpecification = text;
-                    renderMarkdown(text);
-                    
-                    // Разблокировка кнопки импорта
-                    importBtn.disabled = false;
-                    importBtn.classList.remove('cursor-not-allowed', 'text-gray-400');
-                    importBtn.classList.add('text-accent', 'border-accent', 'hover:bg-white/5');
-                    
-                    showToast('Расчет завершен', 'ИИ успешно сгенерировал технологические рекомендации.');
-                } else {
-                    showErrorState();
-                }
-            } else {
-                showErrorState();
-            }
-        }
-
-        // Рендеринг ответа в структурированную форму
-        function renderMarkdown(text) {
-            const outputBlock = document.getElementById('aiTextOutput');
-            outputBlock.classList.remove('hidden');
-            
-            // Превращаем переносы строк и базовую разметку markdown во фреймворк-компоненты
-            let formattedText = text
-                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-bold">$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
-                .replace(/^\s*-\s*(.*?)$/gm, '<li class="ml-4 list-disc text-gray-300">$1</li>')
-                .replace(/^(#+)\s*(.*?)$/gm, (match, hashes, title) => {
-                    const size = hashes.length === 1 ? 'text-lg font-extrabold text-accent' : 'text-sm font-bold text-gray-200 mt-2 border-l-2 border-accent pl-2';
-                    return `<div class="${size}">${title}</div>`;
-                });
-
-            outputBlock.innerHTML = `<div class="space-y-2 text-xs md:text-sm text-gray-300">${formattedText}</div>`;
-        }
-
-        function showErrorState() {
-            const outputBlock = document.getElementById('aiTextOutput');
-            outputBlock.classList.remove('hidden');
-            outputBlock.innerHTML = `
-                <div class="text-center p-4 bg-red-950/40 border border-red-900 rounded-xl space-y-2">
-                    <svg class="w-8 h-8 text-red-500 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                    <div class="text-sm font-bold text-white">Ошибка подключения к Gemini API</div>
-                    <p class="text-[11px] text-gray-400">Пожалуйста, повторите попытку через несколько секунд или опишите ваш проект напрямую в форме ТЗ ниже.</p>
-                </div>
-            `;
-        }
-
-        // Импорт рекомендаций ИИ в форму контактов ТЗ
-        function importAiToMainForm() {
-            if (!lastAiSpecification) return;
-
-            const aiNotice = document.getElementById('aiImportNotice');
-            const aiText = document.getElementById('aiImportText');
-            
-            // Вычленяем первые 160 символов для превью
-            aiText.textContent = lastAiSpecification.substring(0, 180) + '...';
-            aiNotice.classList.remove('hidden');
-
-            // Заполняем поле подробностей проекта (если пустое или дополняем)
-            const detailsTextarea = document.getElementById('projectDetails');
-            detailsTextarea.value = (detailsTextarea.value ? detailsTextarea.value + '\n\n' : '') + `[ИИ-Спецификация]:\n${lastAiSpecification}`;
-
-            // Скролл
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            showToast('Рекомендации импортированы', 'Техническая спецификация от ИИ была добавлена к вашему ТЗ.');
-        }
-
-        // Первичный запуск вычислений калькулятора на старте страницы
         window.onload = function() {
             calculateTechParams();
         }
