@@ -186,36 +186,26 @@
     </header>
 
     <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO) -->
-    <section class="relative min-h-[95vh] flex items-center bg-primary overflow-hidden py-24">
-        <!-- Фоновое изображение: роботизированная линия НОВАТЕК -->
-        <img src="izobrajenie_2024_08_13_183434322.jpg" 
-             alt="Роботизированная линия окраски НОВАТЕК" 
-             class="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-1000">
-        
-        <!-- Многослойное градиентное затемнение для контраста текста слева -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0D1B2A]/95 via-[#0D1B2A]/80 to-[#0D1B2A]/60"></div>
-        <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
-        
-        <!-- Инженерная сетка -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(0,158,224,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,158,224,0.06)_1px,transparent_1px)] bg-[size:48px_48px] opacity-70"></div>
+    <section class="relative min-h-[92vh] flex items-center bg-[#0D1B2A] overflow-hidden py-24 bg-cover bg-center bg-no-repeat"
+             style="background-image: linear-gradient(90deg, rgba(13, 27, 42, 0.92) 0%, rgba(13, 27, 42, 0.75) 45%, rgba(13, 27, 42, 0.35) 100%), url('izobrajenie_2024_08_13_183434322.jpg');">
         
         <div class="relative max-w-[1700px] mx-auto px-6 sm:px-12 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
             <div class="lg:col-span-8 space-y-10">
-                <span class="inline-flex items-center gap-2.5 bg-accent/15 border border-accent/30 text-accent font-semibold px-5 py-2 rounded-full text-xs uppercase tracking-wider backdrop-blur-sm">
+                <span class="inline-flex items-center gap-2.5 bg-accent/20 border border-accent/40 text-accent font-semibold px-5 py-2 rounded-full text-xs uppercase tracking-wider backdrop-blur-md">
                     <span class="w-2.5 h-2.5 rounded-full bg-accent animate-ping"></span>
                     Проектирование и запуск окрасочных цехов под ключ
                 </span>
                 
-                <h1 class="text-white font-extrabold text-4xl sm:text-6xl xl:text-7xl tracking-tight leading-[1.1]">
+                <h1 class="text-white font-extrabold text-4xl sm:text-6xl xl:text-7xl tracking-tight leading-[1.1] drop-shadow-md">
                     Промышленные окрасочные кабины и автоматические линии окраски
                 </h1>
                 
-                <p class="text-gray-200 text-xl sm:text-2xl max-w-4xl leading-relaxed font-light">
+                <p class="text-gray-100 text-xl sm:text-2xl max-w-4xl leading-relaxed font-normal drop-shadow">
                     Проектируем, изготавливаем, поставляем и запускаем передовые комплексы окраски для промышленных предприятий по всей РФ и странам СНГ.
                 </p>
                 
-                <!-- Преимущества -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-gray-200">
+                <!-- Список преимуществ -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-gray-100">
                     <div class="flex items-center gap-3">
                         <svg class="w-6 h-6 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                         <span class="text-base font-medium">Индивидуальные инженерные решения</span>
@@ -239,15 +229,15 @@
                 </div>
 
                 <div class="pt-4">
-                    <a href="#contact" class="bg-accent hover:bg-accentDark text-white inline-flex items-center justify-center gap-3 font-bold px-10 py-5 rounded-2xl transition-all duration-200 shadow-xl shadow-accent/25 text-base">
+                    <a href="#contact" class="bg-accent hover:bg-accentDark text-white inline-flex items-center justify-center gap-3 font-bold px-10 py-5 rounded-2xl transition-all duration-200 shadow-xl shadow-accent/30 text-base">
                         Получить инженерную консультацию
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                 </div>
             </div>
 
-            <!-- Блок показателей -->
-            <div class="lg:col-span-4 bg-secondary/80 backdrop-blur-md border border-white/15 p-10 rounded-3xl space-y-8 shadow-2xl">
+            <!-- Блок показателей справа -->
+            <div class="lg:col-span-4 bg-[#1B263B]/85 backdrop-blur-md border border-white/20 p-10 rounded-3xl space-y-8 shadow-2xl">
                 <h3 class="text-white font-bold text-2xl border-b border-white/10 pb-5">Статистика инжиниринга</h3>
                 
                 <div class="space-y-6">
@@ -269,7 +259,7 @@
                     </div>
                 </div>
 
-                <div class="bg-primary/70 p-5 rounded-2xl border border-white/10 space-y-3">
+                <div class="bg-[#0D1B2A]/80 p-5 rounded-2xl border border-white/10 space-y-3">
                     <div class="text-xs uppercase tracking-wider text-accent font-bold">Официальный индустриальный партнер</div>
                     <div class="flex gap-4 items-center justify-start opacity-90 mt-2">
                         <span class="text-white text-xs font-bold border border-white/20 px-3 py-1 rounded">SAMES</span>
@@ -1189,7 +1179,7 @@
         </div>
     </footer>
 
-    <!-- Скрипты интерактивности: мобильное меню, аккордеон и слайдер проектов novatek-e.com -->
+    <!-- Скрипты интерактивности: меню, аккордеон и слайдер проектов novatek-e.com -->
     <script>
         // Мобильное меню
         function toggleMobileMenu() {
@@ -1222,7 +1212,7 @@
             }
         }
 
-        // Данные слайдера проектов в точности по скриншотам с сайта novatek-e.com
+        // Данные слайдера проектов в точности по novatek-e.com
         const projectData = [
             {
                 year: "2023",
@@ -1289,27 +1279,27 @@
             const badge = document.getElementById("projectCardBadge");
             const img = document.getElementById("mainProjectImg");
             
-            // Плавное обновление фото
+            // Плавная смена фотографии
             img.style.opacity = '0';
             setTimeout(() => {
                 img.src = p.img;
                 img.style.opacity = '1';
             }, 120);
 
-            // Текстовая информация
+            // Текстовые блоки
             document.getElementById("projYear").textContent = p.year;
             document.getElementById("projTitle").textContent = p.title;
             document.getElementById("projCity").textContent = "город: " + p.city;
             document.getElementById("projSubtitle").textContent = p.subtitle;
 
-            // Цветовая тема карточки
+            // Цветовая тема (синяя / темная)
             if (p.theme === "blue") {
                 badge.className = "lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#009EE0]";
             } else {
                 badge.className = "lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#363636]";
             }
 
-            // Список оборудования проекта
+            // Список оборудования
             const listContainer = document.getElementById("projList");
             listContainer.innerHTML = "";
             p.items.forEach(item => {
@@ -1324,7 +1314,7 @@
                 listContainer.appendChild(el);
             });
 
-            // Обновление активной рамки миниатюр
+            // Обновление рамок у миниатюр
             for (let i = 0; i < projectData.length; i++) {
                 const thumb = document.getElementById(`thumb-${i}`);
                 if (i === idx) {
@@ -1350,7 +1340,7 @@
             renderProject(curProjIdx);
         }
 
-        // Показ тоста
+        // Показ уведомления
         function showToast(title, message) {
             const toast = document.getElementById('toastNotification');
             const toastTitle = document.getElementById('toastTitle');
@@ -1368,7 +1358,7 @@
             }, 5000);
         }
 
-        // Выбор файла в форме
+        // Загрузка файла
         function handleFileSelect(event) {
             const file = event.target.files[0];
             const label = document.getElementById('fileNameLabel');
@@ -1387,7 +1377,7 @@
             showToast('Предложение формируется', 'Инженер департамента окрасочных технологий НОВАТЕК свяжется с вами для согласования ТЗ.');
         }
 
-        // Старт первого слайда при загрузке
+        // Инициализация первого проекта при загрузке
         window.addEventListener("DOMContentLoaded", () => {
             renderProject(0);
         });
