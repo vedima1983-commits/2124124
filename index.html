@@ -121,7 +121,7 @@
                         Оборудование
                         <svg class="w-4 h-4 text-mutedText group-hover:text-accent transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <!-- Выпадающее мега-меню -->
+                    <!-- Мега-меню -->
                     <div class="absolute left-1/2 -translate-x-1/2 top-full w-[640px] bg-white border border-gray-100 shadow-2xl rounded-2xl p-6 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 grid grid-cols-2 gap-4">
                         <a href="#equipment" class="p-3.5 hover:bg-lightBg rounded-xl transition-colors block">
                             <h5 class="font-bold text-primary text-sm flex items-center gap-2">
@@ -187,16 +187,16 @@
 
     <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO) -->
     <section class="relative min-h-[95vh] flex items-center bg-primary overflow-hidden py-24">
-        <!-- Фоновое изображение -->
+        <!-- Фоновое изображение: роботизированная линия НОВАТЕК -->
         <img src="izobrajenie_2024_08_13_183434322.jpg" 
              alt="Роботизированная линия окраски НОВАТЕК" 
              class="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-1000">
         
-        <!-- Затемнение для идеальной читаемости текста слева -->
+        <!-- Многослойное градиентное затемнение для контраста текста слева -->
         <div class="absolute inset-0 bg-gradient-to-r from-[#0D1B2A]/95 via-[#0D1B2A]/80 to-[#0D1B2A]/60"></div>
         <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
         
-        <!-- Инженерная координатная сетка -->
+        <!-- Инженерная сетка -->
         <div class="absolute inset-0 bg-[linear-gradient(rgba(0,158,224,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,158,224,0.06)_1px,transparent_1px)] bg-[size:48px_48px] opacity-70"></div>
         
         <div class="relative max-w-[1700px] mx-auto px-6 sm:px-12 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
@@ -698,196 +698,71 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ИНДУСТРИАЛЬНЫЕ ПРОЕКТЫ -->
-    <section id="projects" class="py-28 bg-lightBg">
+    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ (КАК НА NOVATEK-E.COM) -->
+    <section id="projects" class="py-20 bg-white border-t border-b border-gray-150">
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-6">
-                <div class="space-y-4">
-                    <h2 class="text-primary font-extrabold text-3xl sm:text-5xl tracking-tight">
-                        Реализованные индустриальные проекты
-                    </h2>
-                    <div class="w-20 h-1.5 bg-accent rounded-full"></div>
+            <!-- Заголовок секции в стиле novatek-e.com -->
+            <div class="mb-10">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0080C8]">
+                    Реализованные проекты
+                </h2>
+            </div>
+
+            <!-- Главный интерактивный слайдер -->
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col lg:flex-row bg-white min-h-[580px]">
+                
+                <!-- Левая плашка с ТЗ -->
+                <div id="projectCardBadge" class="lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#009EE0]">
+                    <div class="space-y-6">
+                        <span id="projYear" class="text-sm font-semibold tracking-wider opacity-90 block">2023</span>
+                        <div>
+                            <h3 id="projTitle" class="text-3xl sm:text-4xl font-extrabold tracking-tight">Либхерр</h3>
+                            <p id="projCity" class="text-sm sm:text-base font-medium opacity-90 mt-1">город: Нижний Новгород</p>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <h4 id="projSubtitle" class="text-base sm:text-lg font-bold mb-4">
+                                Линия окраски крупногабаритных изделий:
+                            </h4>
+                            <div id="projList" class="space-y-2.5">
+                                <!-- Список рендерится через JS -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-mutedText max-w-xl text-base leading-relaxed">
-                    Наши завершенные проекты — это полностью автоматизированные комплексы окраски на ведущих заводах машиностроения и металлообработки.
+
+                <!-- Правая область с фотографией объекта и стрелками -->
+                <div class="lg:w-[62%] relative bg-gray-950 overflow-hidden flex items-center justify-center min-h-[400px] lg:min-h-full">
+                    <img id="mainProjectImg" src="izobrajenie_2024_08_15_235358756.jpg" alt="Реализованный проект НОВАТЕК" 
+                         class="w-full h-full object-cover transition-opacity duration-300">
+
+                    <!-- Стрелка влево -->
+                    <button onclick="prevProject()" aria-label="Предыдущий проект" 
+                            class="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition-all z-20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <!-- Стрелка вправо -->
+                    <button onclick="nextProject()" aria-label="Следующий проект" 
+                            class="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition-all z-20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </button>
                 </div>
             </div>
 
-            <!-- Сетка карточек 2x2 -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                
-                <!-- Проект 1: Автопром -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row group">
-                    <div class="md:w-1/2 bg-primary overflow-hidden relative min-h-[300px]">
-                        <img src="izobrajenie_2024_08_13_183434322.jpg" 
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80'"
-                             alt="Модернизация конвейера окраски деталей шасси" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-5 left-5 bg-accent text-white font-bold text-xs px-3.5 py-1.5 rounded-lg uppercase tracking-wider shadow-md">
-                            Автопром
-                        </span>
-                    </div>
-                    <div class="md:w-1/2 p-8 flex flex-col justify-between space-y-6">
-                        <div class="space-y-2">
-                            <h4 class="text-primary font-bold text-xl leading-snug">
-                                Модернизация конвейера окраски деталей шасси
-                            </h4>
-                            <div class="text-xs text-mutedText font-semibold flex items-center gap-1.5">
-                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                Нижний Новгород, Россия
-                            </div>
-                        </div>
-
-                        <div class="space-y-2.5 text-sm border-t border-b border-gray-100 py-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Задача:</span> 
-                                <span class="font-bold text-primary text-right">Исключить ручной напыл</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Решение:</span> 
-                                <span class="font-bold text-primary text-right">6-осевой робот YASKAWA</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Результат:</span> 
-                                <span class="font-bold text-accent text-right">Выпуск +40%, Брак &lt;0,5%</span>
-                            </div>
-                        </div>
-
-                        <a href="#contact" class="text-center bg-lightBg hover:bg-accent hover:text-white text-primary font-bold py-3.5 rounded-xl text-sm transition-all duration-200">
-                            Посмотреть ТТХ проекта
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Проект 2: Машиностроение -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row group">
-                    <div class="md:w-1/2 bg-primary overflow-hidden relative min-h-[300px]">
-                        <img src="izobrajenie_2024_08_15_235339423.jpg" 
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'"
-                             alt="Камера сушки рам крупногабаритных экскаваторов" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-5 left-5 bg-accent text-white font-bold text-xs px-3.5 py-1.5 rounded-lg uppercase tracking-wider shadow-md">
-                            Машиностроение
-                        </span>
-                    </div>
-                    <div class="md:w-1/2 p-8 flex flex-col justify-between space-y-6">
-                        <div class="space-y-2">
-                            <h4 class="text-primary font-bold text-xl leading-snug">
-                                Камера сушки рам крупногабаритных экскаваторов
-                            </h4>
-                            <div class="text-xs text-mutedText font-semibold flex items-center gap-1.5">
-                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                Челябинск, Россия
-                            </div>
-                        </div>
-
-                        <div class="space-y-2.5 text-sm border-t border-b border-gray-100 py-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Задача:</span> 
-                                <span class="font-bold text-primary text-right">Ускорить сушку в 3 раза</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Решение:</span> 
-                                <span class="font-bold text-primary text-right">ИК-нагреватели 240 кВт</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Результат:</span> 
-                                <span class="font-bold text-accent text-right">Сушка за 40 мин вместо 4 ч</span>
-                            </div>
-                        </div>
-
-                        <a href="#contact" class="text-center bg-lightBg hover:bg-accent hover:text-white text-primary font-bold py-3.5 rounded-xl text-sm transition-all duration-200">
-                            Посмотреть ТТХ проекта
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Проект 3: Сельхозтехника -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row group">
-                    <div class="md:w-1/2 bg-primary overflow-hidden relative min-h-[300px]">
-                        <img src="izobrajenie_2024_08_15_235928218.jpg" 
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80'"
-                             alt="Комплекс порошковой окраски навесного оборудования" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-5 left-5 bg-accent text-white font-bold text-xs px-3.5 py-1.5 rounded-lg uppercase tracking-wider shadow-md">
-                            Сельхозтехника
-                        </span>
-                    </div>
-                    <div class="md:w-1/2 p-8 flex flex-col justify-between space-y-6">
-                        <div class="space-y-2">
-                            <h4 class="text-primary font-bold text-xl leading-snug">
-                                Комплекс порошковой окраски навесного оборудования
-                            </h4>
-                            <div class="text-xs text-mutedText font-semibold flex items-center gap-1.5">
-                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                Ростов-на-Дону, Россия
-                            </div>
-                        </div>
-
-                        <div class="space-y-2.5 text-sm border-t border-b border-gray-100 py-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Задача:</span> 
-                                <span class="font-bold text-primary text-right">Запуск линии с нуля</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Решение:</span> 
-                                <span class="font-bold text-primary text-right">Линия химподготовки и сушки</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Результат:</span> 
-                                <span class="font-bold text-accent text-right">Адгезия 1 балл, Срок окупаемости 18 мес</span>
-                            </div>
-                        </div>
-
-                        <a href="#contact" class="text-center bg-lightBg hover:bg-accent hover:text-white text-primary font-bold py-3.5 rounded-xl text-sm transition-all duration-200">
-                            Посмотреть ТТХ проекта
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Проект 4: Металлообработка -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row group">
-                    <div class="md:w-1/2 bg-primary overflow-hidden relative min-h-[300px]">
-                        <img src="izobrajenie_2024_08_15_235358756.jpg" 
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?auto=format&fit=crop&w=800&q=80'"
-                             alt="Кабина с водяным каскадом для ферм мостовых кранов" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-5 left-5 bg-accent text-white font-bold text-xs px-3.5 py-1.5 rounded-lg uppercase tracking-wider shadow-md">
-                            Металлообработка
-                        </span>
-                    </div>
-                    <div class="md:w-1/2 p-8 flex flex-col justify-between space-y-6">
-                        <div class="space-y-2">
-                            <h4 class="text-primary font-bold text-xl leading-snug">
-                                Кабина с водяным каскадом для ферм мостовых кранов
-                            </h4>
-                            <div class="text-xs text-mutedText font-semibold flex items-center gap-1.5">
-                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                Екатеринбург, Россия
-                            </div>
-                        </div>
-
-                        <div class="space-y-2.5 text-sm border-t border-b border-gray-100 py-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Задача:</span> 
-                                <span class="font-bold text-primary text-right">Окраска ферм длиной до 12 м</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Решение:</span> 
-                                <span class="font-bold text-primary text-right">Кабина водяного каскада 12 м</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-mutedText">Результат:</span> 
-                                <span class="font-bold text-accent text-right">Улавливание пыли 99.8%</span>
-                            </div>
-                        </div>
-
-                        <a href="#contact" class="text-center bg-lightBg hover:bg-accent hover:text-white text-primary font-bold py-3.5 rounded-xl text-sm transition-all duration-200">
-                            Посмотреть ТТХ проекта
-                        </a>
-                    </div>
-                </div>
-
+            <!-- Нижняя галерея миниатюр -->
+            <div class="grid grid-cols-4 gap-3 sm:gap-6 mt-6">
+                <button onclick="setProject(0)" id="thumb-0" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-[#009EE0] transition-all opacity-100 shadow-md">
+                    <img src="izobrajenie_2024_08_15_235358756.jpg" alt="Либхерр" class="w-full h-full object-cover">
+                </button>
+                <button onclick="setProject(1)" id="thumb-1" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-transparent hover:border-gray-300 transition-all opacity-60 hover:opacity-100">
+                    <img src="bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg" alt="ГАЗ" class="w-full h-full object-cover">
+                </button>
+                <button onclick="setProject(2)" id="thumb-2" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-transparent hover:border-gray-300 transition-all opacity-60 hover:opacity-100">
+                    <img src="photo_5379886459311489002_y.jpg" alt="Автокомпонент" class="w-full h-full object-cover">
+                </button>
+                <button onclick="setProject(3)" id="thumb-3" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-transparent hover:border-gray-300 transition-all opacity-60 hover:opacity-100">
+                    <img src="izobrajenie_2024_08_15_235928218.jpg" alt="Профессионал" class="w-full h-full object-cover">
+                </button>
             </div>
         </div>
     </section>
@@ -1139,7 +1014,7 @@
                         <span>Возможно ли интегрировать роботов в существующую окрасочную линию?</span>
                         <svg id="faqIcon-3" class="w-6 h-6 text-mutedText transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div id="faqContent-3" class="hidden p-7 text-base text-mutedText border-t border-gray-100 bg-white leading-relaxed">
+                    <div id="faqContent-2" class="hidden p-7 text-base text-mutedText border-t border-gray-100 bg-white leading-relaxed">
                         Да, НОВАТЕК Инжиниринг специализируется на глубокой модернизации (ретрофите) действующих окрасочных цехов. Наши программисты и инженеры могут установить роботизированные манипуляторы YASKAWA или SAMES на ваш текущий напольный или подвесной конвейер, отладить оптические датчики обнаружения деталей и внедрить систему автоматического дозирования ЛКМ.
                     </div>
                 </div>
@@ -1314,8 +1189,9 @@
         </div>
     </footer>
 
-    <!-- Скрипты интерфейса -->
+    <!-- Скрипты интерактивности: мобильное меню, аккордеон и слайдер проектов novatek-e.com -->
     <script>
+        // Мобильное меню
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const openIcon = document.getElementById('menuIconOpen');
@@ -1332,6 +1208,7 @@
             }
         }
 
+        // Аккордеон FAQ
         function toggleAccordion(id) {
             const content = document.getElementById(`faqContent-${id}`);
             const icon = document.getElementById(`faqIcon-${id}`);
@@ -1345,6 +1222,135 @@
             }
         }
 
+        // Данные слайдера проектов в точности по скриншотам с сайта novatek-e.com
+        const projectData = [
+            {
+                year: "2023",
+                title: "Либхерр",
+                city: "Нижний Новгород",
+                subtitle: "Линия окраски крупногабаритных изделий:",
+                theme: "blue",
+                img: "izobrajenie_2024_08_15_235358756.jpg",
+                items: [
+                    "Окрасочно-сушильные камеры (2 ед.)",
+                    "Камера мойки и подготовки изделий (1 ед.)",
+                    "Рельсовая транспортная система (1 ед.)"
+                ]
+            },
+            {
+                year: "2025",
+                title: "ГАЗ",
+                city: "Нижний Новгород",
+                subtitle: "Линия окраски изделий:",
+                theme: "blue",
+                img: "bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg",
+                items: [
+                    "Окрасочные роботы (2 ед.)",
+                    "Роботы открывания дверей оборудованных дополнительно двумя осями перемещений (2 ед.)",
+                    "Опорные металлоконструкции осей перемещения и роботов (4 ед.)"
+                ]
+            },
+            {
+                year: "2025",
+                title: "Автокомпонент",
+                city: "Тольятти",
+                subtitle: "Автоматическая линия окраски колпаков колесных дисков:",
+                theme: "dark",
+                img: "photo_5379886459311489002_y.jpg",
+                items: [
+                    "Конвейерная система (1 ед.)",
+                    "Блок подготовки и перемещения воздуха AHU (1 ед.)",
+                    "Камера подготовки (1 ед.)",
+                    "Окрасочная камера (3 ед.)",
+                    "Печь полимеризации ЛКМ (1 ед.)",
+                    "Автоматическая система нанесения ЛКМ (1 ед.)"
+                ]
+            },
+            {
+                year: "2023",
+                title: "Профессионал",
+                city: "Иваново",
+                subtitle: "Линия окраски габаритных изделий:",
+                theme: "dark",
+                img: "izobrajenie_2024_08_15_235928218.jpg",
+                items: [
+                    "Окрасочная камера (1 ед.)",
+                    "Камера выдержки (1 ед.)",
+                    "Подвесная транспортная система (1 ед.)",
+                    "Печь полимеризации ЛКМ (1 ед.)"
+                ]
+            }
+        ];
+
+        let curProjIdx = 0;
+
+        function renderProject(idx) {
+            const p = projectData[idx];
+            const badge = document.getElementById("projectCardBadge");
+            const img = document.getElementById("mainProjectImg");
+            
+            // Плавное обновление фото
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = p.img;
+                img.style.opacity = '1';
+            }, 120);
+
+            // Текстовая информация
+            document.getElementById("projYear").textContent = p.year;
+            document.getElementById("projTitle").textContent = p.title;
+            document.getElementById("projCity").textContent = "город: " + p.city;
+            document.getElementById("projSubtitle").textContent = p.subtitle;
+
+            // Цветовая тема карточки
+            if (p.theme === "blue") {
+                badge.className = "lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#009EE0]";
+            } else {
+                badge.className = "lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#363636]";
+            }
+
+            // Список оборудования проекта
+            const listContainer = document.getElementById("projList");
+            listContainer.innerHTML = "";
+            p.items.forEach(item => {
+                const el = document.createElement("div");
+                el.className = "flex items-start gap-3 p-3 rounded-lg text-xs sm:text-sm font-medium bg-white/10 backdrop-blur-sm";
+                el.innerHTML = `
+                    <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                    <span>${item}</span>
+                `;
+                listContainer.appendChild(el);
+            });
+
+            // Обновление активной рамки миниатюр
+            for (let i = 0; i < projectData.length; i++) {
+                const thumb = document.getElementById(`thumb-${i}`);
+                if (i === idx) {
+                    thumb.className = "h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-[#009EE0] transition-all opacity-100 shadow-md";
+                } else {
+                    thumb.className = "h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-transparent hover:border-gray-300 transition-all opacity-60 hover:opacity-100";
+                }
+            }
+        }
+
+        function setProject(idx) {
+            curProjIdx = idx;
+            renderProject(curProjIdx);
+        }
+
+        function nextProject() {
+            curProjIdx = (curProjIdx + 1) % projectData.length;
+            renderProject(curProjIdx);
+        }
+
+        function prevProject() {
+            curProjIdx = (curProjIdx - 1 + projectData.length) % projectData.length;
+            renderProject(curProjIdx);
+        }
+
+        // Показ тоста
         function showToast(title, message) {
             const toast = document.getElementById('toastNotification');
             const toastTitle = document.getElementById('toastTitle');
@@ -1362,6 +1368,7 @@
             }, 5000);
         }
 
+        // Выбор файла в форме
         function handleFileSelect(event) {
             const file = event.target.files[0];
             const label = document.getElementById('fileNameLabel');
@@ -1371,15 +1378,19 @@
             }
         }
 
+        // Отправка формы
         function handleFormSubmit(event) {
             event.preventDefault();
-            
             document.getElementById('engineeringForm').reset();
             document.getElementById('fileNameLabel').textContent = 'Загрузите файл Технического Задания (ТЗ) или чертежи';
             document.getElementById('fileNameLabel').classList.remove('text-accent');
-
             showToast('Предложение формируется', 'Инженер департамента окрасочных технологий НОВАТЕК свяжется с вами для согласования ТЗ.');
         }
+
+        // Старт первого слайда при загрузке
+        window.addEventListener("DOMContentLoaded", () => {
+            renderProject(0);
+        });
     </script>
 </body>
 </html>
