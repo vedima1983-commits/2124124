@@ -66,7 +66,7 @@
 </head>
 <body class="bg-neutralBg overflow-x-hidden">
 
-    <!-- Уведомление об успешной отправке заявки -->
+    <!-- Кастомное уведомление -->
     <div id="toastNotification" class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 ease-out max-w-lg w-full bg-primary border-l-4 border-accent shadow-2xl p-5 rounded-2xl flex items-start gap-4 pointer-events-none">
         <div class="text-accent shrink-0 mt-0.5">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -201,7 +201,7 @@
 
     <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO) -->
     <section class="relative min-h-[92vh] flex items-center bg-[#0D1B2A] overflow-hidden py-24 bg-cover bg-center bg-no-repeat"
-             style="background-image: linear-gradient(90deg, rgba(13, 27, 42, 0.82) 0%, rgba(13, 27, 42, 0.55) 45%, rgba(13, 27, 42, 0.15) 100%), url('izobrajenie_2024_08_13_183434322.jpg');">
+             style="background-image: linear-gradient(90deg, rgba(13, 27, 42, 0.82) 0%, rgba(13, 27, 42, 0.55) 45%, rgba(13, 27, 42, 0.15) 100%), url('izbrajenie_2024_08_13_183434322.png');">
         
         <div class="relative max-w-[1700px] mx-auto px-6 sm:px-12 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
             <div class="lg:col-span-8 space-y-10">
@@ -386,7 +386,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 3 — РЕШЕНИЯ НОВАТЕК (ФОТО IZOBRAJENIE_2024_08_16_010112817.JPG) -->
+    <!-- СЕКЦИЯ 3 — РЕШЕНИЯ НОВАТЕК -->
     <section id="solutions" class="py-28 bg-white">
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -687,17 +687,20 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ (С КАРУСЕЛЯМИ ДЛЯ ВСЕХ 4 КЕЙСОВ) -->
+    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ (С ВНУТРЕННЕЙ КАРУСЕЛЬЮ ФОТО ДЛЯ ВСЕХ ПРОЕКТОВ) -->
     <section id="projects" class="py-20 bg-white border-t border-b border-gray-150">
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
+            <!-- Заголовок секции -->
             <div class="mb-10">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0080C8]">
                     Реализованные проекты
                 </h2>
             </div>
 
+            <!-- Главный интерактивный слайдер -->
             <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col lg:flex-row bg-white min-h-[580px]">
                 
+                <!-- Левая плашка с ТЗ -->
                 <div id="projectCardBadge" class="lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#009EE0]">
                     <div class="space-y-6">
                         <span id="projYear" class="text-sm font-semibold tracking-wider opacity-90 block">2023</span>
@@ -717,18 +720,22 @@
                     </div>
                 </div>
 
+                <!-- Правая область с фотографией объекта и стрелками карусели -->
                 <div class="lg:w-[62%] relative bg-gray-950 overflow-hidden flex items-center justify-center min-h-[400px] lg:min-h-full">
-                    <img id="mainProjectImg" src="izobrajenie_2024_08_15_235358756.jpg" alt="Реализованный проект НОВАТЕК" 
+                    <img id="mainProjectImg" src="izobrajenie_2024_08_15_235358756.png" alt="Реализованный проект НОВАТЕК" 
                          class="w-full h-full object-cover transition-opacity duration-300">
 
+                    <!-- Счетчик фото для карусели -->
                     <div id="photoCounterBadge" class="absolute top-5 right-5 bg-black/60 backdrop-blur-md text-white font-bold text-xs px-3 py-1.5 rounded-full border border-white/20 z-20">
                         1 / 5
                     </div>
 
+                    <!-- Стрелка влево (переключение фото текущего проекта) -->
                     <button onclick="prevPhoto()" aria-label="Предыдущее фото" 
                             class="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition-all z-20">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                     </button>
+                    <!-- Стрелка вправо (переключение фото текущего проекта) -->
                     <button onclick="nextPhoto()" aria-label="Следующее фото" 
                             class="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition-all z-20">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -736,9 +743,10 @@
                 </div>
             </div>
 
+            <!-- Нижняя галерея миниатюр проектов -->
             <div class="grid grid-cols-4 gap-3 sm:gap-6 mt-6">
                 <button onclick="setProject(0)" id="thumb-0" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-[#009EE0] transition-all opacity-100 shadow-md">
-                    <img src="izobrajenie_2024_08_15_235358756.jpg" alt="Либхерр" class="w-full h-full object-cover">
+                    <img src="izobrajenie_2024_08_15_235358756.png" alt="Либхерр" class="w-full h-full object-cover">
                 </button>
                 <button onclick="setProject(1)" id="thumb-1" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-transparent hover:border-gray-300 transition-all opacity-60 hover:opacity-100">
                     <img src="bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg" alt="ГАЗ" class="w-full h-full object-cover">
@@ -747,7 +755,7 @@
                     <img src="photo_5379886459311489002_y.jpg" alt="Автокомпонент" class="w-full h-full object-cover">
                 </button>
                 <button onclick="setProject(3)" id="thumb-3" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-transparent hover:border-gray-300 transition-all opacity-60 hover:opacity-100">
-                    <img src="izobrajenie_2024_08_15_235910484.jpg" alt="Профессионал" class="w-full h-full object-cover">
+                    <img src="izobrajenie_2024_08_15_235910484.png" alt="Профессионал" class="w-full h-full object-cover">
                 </button>
             </div>
         </div>
@@ -886,7 +894,6 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-10 items-center justify-items-center">
-                <!-- SAMES KREMLIN -->
                 <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
                     <div class="flex items-center gap-2">
                         <span class="font-black text-xl tracking-tighter text-black">SAMES</span>
@@ -897,7 +904,6 @@
                     </div>
                 </div>
 
-                <!-- Чайка Сервис -->
                 <div class="w-full h-24 flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300">
                     <div class="bg-[#0055A5] text-white px-5 py-2.5 rounded-sm flex flex-col items-center justify-center shadow-sm w-full max-w-[220px]">
                         <span class="text-[9px] font-bold tracking-wider uppercase opacity-90 leading-none mb-1">Автомобильный завод</span>
@@ -909,7 +915,6 @@
                     </div>
                 </div>
 
-                <!-- NEFAZ -->
                 <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
                     <div class="flex items-center gap-2 text-black">
                         <div class="w-8 h-8 border-4 border-gray-800 rounded-sm flex items-center justify-center font-black text-base shadow-inner">H</div>
@@ -917,7 +922,6 @@
                     </div>
                 </div>
 
-                <!-- DAIMLER KAMAZ RUS -->
                 <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
                     <div class="text-center">
                         <div class="font-bold text-sm sm:text-base tracking-widest text-[#111827]">DAIMLER KAMAZ RUS</div>
@@ -925,7 +929,6 @@
                     </div>
                 </div>
 
-                <!-- ПТМ -->
                 <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
                     <div class="flex items-center gap-2">
                         <div class="w-9 h-9 border-4 border-[#F26522] rounded-lg rotate-12 flex items-center justify-center font-black text-xs text-[#0D1B2A]">⬢</div>
@@ -933,7 +936,6 @@
                     </div>
                 </div>
 
-                <!-- Профессионал -->
                 <div class="w-full h-24 flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300">
                     <div class="bg-[#8B0029] text-white px-5 py-3 rounded-sm flex items-center gap-2.5 shadow-sm w-full max-w-[220px] justify-center">
                         <span class="border-2 border-white rounded-md px-1.5 py-0.5 font-bold text-xs">pb</span>
@@ -941,7 +943,6 @@
                     </div>
                 </div>
 
-                <!-- RUS COMTRANS -->
                 <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
                     <div class="text-center">
                         <div class="font-black italic text-lg sm:text-xl text-[#0066B3] tracking-tighter">RUS COMTRANS</div>
@@ -949,7 +950,6 @@
                     </div>
                 </div>
 
-                <!-- DEMFA -->
                 <div class="w-full h-24 flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300">
                     <div class="bg-black text-white px-5 py-2.5 rounded-sm flex flex-col items-center justify-center shadow-sm w-full max-w-[220px]">
                         <span class="font-serif tracking-widest text-lg sm:text-xl font-bold">DEMFA</span>
@@ -957,14 +957,12 @@
                     </div>
                 </div>
 
-                <!-- VOLGABUS -->
                 <div class="w-full h-24 flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300">
                     <div class="bg-[#005CA9] text-white px-6 py-3 rounded-sm flex items-center justify-center shadow-sm w-full max-w-[220px]">
                         <span class="font-black text-lg tracking-wider">VOLGABUS</span>
                     </div>
                 </div>
 
-                <!-- Autocomponent -->
                 <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
                     <div class="flex items-center gap-1 font-extrabold text-lg sm:text-xl text-black">
                         <span>Autocomponent</span>
@@ -977,7 +975,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ: НАШИ КОНТАКТЫ С КАРТОЙ (ПО СКРИНШОТУ NOVATEK-E.COM) -->
+    <!-- СЕКЦИЯ: НАШИ КОНТАКТЫ С КАРТОЙ -->
     <section id="contacts" class="py-20 bg-[#222222] text-white border-t border-gray-800">
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
             <div class="mb-12">
@@ -1038,7 +1036,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 10 — FAQ -->
+    <!-- СЕКЦИЯ 11 — FAQ -->
     <section id="faq" class="py-28 bg-white">
         <div class="max-w-[1200px] mx-auto px-6 sm:px-12">
             <div class="text-center mb-20 space-y-4">
@@ -1113,7 +1111,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 11 — ФОРМА ТЗ (ТРЕБОВАНИЕ 152-ФЗ / РКН: СОГЛАСИЕ И НЕПРЕДУСТАНОВЛЕННЫЙ ЧЕКБОКС) -->
+    <!-- СЕКЦИЯ 12 — ФОРМА ТЗ -->
     <section id="contact" class="py-28 bg-lightBg border-t border-gray-200">
         <div class="max-w-[1200px] mx-auto px-6 sm:px-12">
             <div class="bg-white rounded-3xl border border-gray-150 shadow-2xl p-10 sm:p-16 relative overflow-hidden">
@@ -1257,7 +1255,7 @@
                 <ul class="space-y-3 text-sm text-gray-400">
                     <li class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                        <a href="tel:+78314238593" class="hover:text-accent transition-colors">+7 (831) 423-85-93</a>
+                        <a href="tel:+78314238593" class="hover:text-accent transition-colors">+7 (831) 423-84-93</a>
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -1274,18 +1272,15 @@
     <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ДОКУМЕНТОВ РОСКОМНАДЗОРА -->
     <div id="policyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 sm:p-6">
         <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden animate-fade-in">
-            <!-- Шапка модального окна -->
             <div class="p-6 sm:p-8 bg-primary text-white flex justify-between items-center border-b border-secondary">
                 <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold tracking-tight">Документ</h3>
                 <button onclick="closePolicyModal()" class="text-gray-400 hover:text-white p-2 rounded-xl transition">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
-            <!-- Тело документа со скроллом -->
             <div id="modalContent" class="p-6 sm:p-10 overflow-y-auto text-sm sm:text-base text-gray-700 leading-relaxed space-y-6">
                 <!-- Контент подставляется скриптом -->
             </div>
-            <!-- Подвал модального окна -->
             <div class="p-5 sm:p-6 bg-lightBg border-t border-gray-200 flex justify-end">
                 <button onclick="closePolicyModal()" class="bg-primary hover:bg-secondary text-white font-bold px-8 py-3 rounded-xl text-sm transition">
                     Закрыть
@@ -1384,7 +1379,6 @@
             }
         };
 
-        // Функции модального окна документов
         function openPolicyModal(docKey) {
             const modal = document.getElementById('policyModal');
             const title = document.getElementById('modalTitle');
@@ -1406,7 +1400,6 @@
             document.body.style.overflow = '';
         }
 
-        // Управление баннером Cookie
         function checkCookieConsent() {
             if (!localStorage.getItem('novatek_cookie_accepted')) {
                 setTimeout(() => {
@@ -1422,7 +1415,6 @@
             banner.classList.add('translate-y-full');
         }
 
-        // Мобильное меню
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const openIcon = document.getElementById('menuIconOpen');
@@ -1439,7 +1431,6 @@
             }
         }
 
-        // Аккордеон FAQ
         function toggleAccordion(id) {
             const content = document.getElementById(`faqContent-${id}`);
             const icon = document.getElementById(`faqIcon-${id}`);
@@ -1453,7 +1444,7 @@
             }
         }
 
-        // Данные слайдера проектов со всеми каруселями
+        // Данные слайдера проектов с индивидуальными фото-каруселями (пути строго по репозиторию)
         const projectData = [
             {
                 year: "2023",
@@ -1462,10 +1453,10 @@
                 subtitle: "Линия окраски крупногабаритных изделий:",
                 theme: "blue",
                 images: [
-                    "izobrajenie_2024_08_15_235358756.jpg",
-                    "izobrajenie_2024_08_15_235339423.jpg",
-                    "izobrajenie_2024_08_15_235348690.jpg",
-                    "izobrajenie_2024_08_13_183434322.jpg",
+                    "izobrajenie_2024_08_15_235358756.png",
+                    "izobrajenie_2024_08_15_235339423.png",
+                    "izobrajenie_2024_08_15_235348690.png",
+                    "izbrajenie_2024_08_13_183434322.png",
                     "izobrajenie_2024_11_08_110642323.png"
                 ],
                 items: [
@@ -1522,8 +1513,8 @@
                 subtitle: "Линия окраски габаритных изделий:",
                 theme: "dark",
                 images: [
-                    "izobrajenie_2024_08_15_235910484.jpg",
-                    "izobrajenie_2024_08_15_235928218.jpg",
+                    "izobrajenie_2024_08_15_235910484.png",
+                    "izobrajenie_2024_08_15_235928218.png",
                     "izobrajenie_2024_08_15_235942860.png",
                     "izobrajenie_2024_08_15_235953938.png",
                     "izobrajenie_2024_11_08_110710027.png"
