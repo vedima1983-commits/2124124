@@ -66,7 +66,7 @@
 </head>
 <body class="bg-neutralBg overflow-x-hidden">
 
-    <!-- Кастомное уведомление -->
+    <!-- Уведомление об успешной отправке заявки -->
     <div id="toastNotification" class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 ease-out max-w-lg w-full bg-primary border-l-4 border-accent shadow-2xl p-5 rounded-2xl flex items-start gap-4 pointer-events-none">
         <div class="text-accent shrink-0 mt-0.5">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -77,9 +77,24 @@
         </div>
     </div>
 
+    <!-- ТРЕБОВАНИЕ РКН: Баннер согласия на использование файлов Cookie -->
+    <div id="cookieBanner" class="fixed bottom-0 inset-x-0 z-50 bg-[#0D1B2A]/95 backdrop-blur-md border-t border-white/10 text-white p-4 sm:p-6 shadow-2xl transition-transform duration-500 translate-y-full">
+        <div class="max-w-[1700px] mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-xs sm:text-sm text-gray-300 leading-relaxed text-center md:text-left">
+                Мы используем файлы cookie и сервисы сбора технических данных для обеспечения корректной работы сайта и анализа посещаемости в соответствии с Федеральным законом № 152-ФЗ. Продолжая использовать сайт, вы соглашаетесь с условиями 
+                <button type="button" onclick="openPolicyModal('privacy')" class="text-accent underline hover:text-white transition-colors">Политики обработки персональных данных</button> и 
+                <button type="button" onclick="openPolicyModal('cookie')" class="text-accent underline hover:text-white transition-colors">Политики файлов cookie</button>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button onclick="acceptCookies()" class="bg-accent hover:bg-accentDark text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition shadow-md">
+                    Принять
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Промышленный хедер -->
     <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-gray-150 transition-all duration-300">
-        <!-- Верхняя техническая панель -->
         <div class="bg-primary text-gray-400 text-xs py-2.5 px-8 sm:px-12 hidden md:flex justify-between items-center border-b border-secondary">
             <div class="flex items-center gap-8">
                 <span class="flex items-center gap-2 text-gray-300 font-medium">
@@ -101,7 +116,6 @@
             </div>
         </div>
 
-        <!-- Главное меню навигации -->
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12 h-24 flex items-center justify-between">
             <a href="#" class="flex items-center gap-4 group">
                 <img src="image001.png" alt="НОВАТЕК Логотип" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo-header').classList.remove('hidden')">
@@ -114,14 +128,12 @@
                 </div>
             </a>
 
-            <!-- Меню -->
             <nav class="hidden lg:flex items-center gap-10">
                 <div class="relative group">
                     <button class="flex items-center gap-1.5 text-primary hover:text-accent font-semibold text-base py-3 transition-colors">
                         Оборудование
                         <svg class="w-4 h-4 text-mutedText group-hover:text-accent transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <!-- Мега-меню -->
                     <div class="absolute left-1/2 -translate-x-1/2 top-full w-[640px] bg-white border border-gray-100 shadow-2xl rounded-2xl p-6 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 grid grid-cols-2 gap-4">
                         <a href="#equipment" class="p-3.5 hover:bg-lightBg rounded-xl transition-colors block">
                             <h5 class="font-bold text-primary text-sm flex items-center gap-2">
@@ -152,10 +164,11 @@
                 <a href="#solutions" class="text-primary hover:text-accent font-semibold text-base transition-colors">Технологии</a>
                 <a href="#projects" class="text-primary hover:text-accent font-semibold text-base transition-colors">Проекты</a>
                 <a href="#timeline" class="text-primary hover:text-accent font-semibold text-base transition-colors">Процесс</a>
+                <a href="#partners" class="text-primary hover:text-accent font-semibold text-base transition-colors">Партнеры</a>
+                <a href="#contacts" class="text-primary hover:text-accent font-semibold text-base transition-colors">Контакты</a>
                 <a href="#faq" class="text-primary hover:text-accent font-semibold text-base transition-colors">FAQ</a>
             </nav>
 
-            <!-- Кнопка заявки -->
             <div class="hidden sm:flex items-center gap-5">
                 <a href="#contact" class="bg-primary hover:bg-secondary text-white font-bold px-8 py-3.5 rounded-xl text-sm transition-all duration-200 border-b-2 border-accent shadow-md">
                     Заказать проект
@@ -168,13 +181,14 @@
             </button>
         </div>
 
-        <!-- Мобильное меню -->
         <div id="mobileMenu" class="hidden lg:hidden bg-primary border-t border-secondary text-white absolute left-0 w-full shadow-2xl p-6 transition-all duration-300">
             <nav class="flex flex-col gap-4">
                 <a href="#equipment" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Оборудование</a>
                 <a href="#solutions" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Технологии</a>
                 <a href="#projects" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Проекты</a>
                 <a href="#timeline" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Процесс</a>
+                <a href="#partners" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Партнеры</a>
+                <a href="#contacts" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">Контакты</a>
                 <a href="#faq" onclick="toggleMobileMenu()" class="text-lg hover:text-accent py-2 border-b border-white/5">FAQ</a>
                 <div class="pt-4">
                     <a href="#contact" onclick="toggleMobileMenu()" class="block text-center bg-accent hover:bg-accentDark text-primary font-bold py-3.5 rounded-xl text-sm">
@@ -187,57 +201,55 @@
 
     <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO) -->
     <section class="relative min-h-[92vh] flex items-center bg-[#0D1B2A] overflow-hidden py-24 bg-cover bg-center bg-no-repeat"
-             style="background-image: linear-gradient(90deg, rgba(13, 27, 42, 0.92) 0%, rgba(13, 27, 42, 0.75) 45%, rgba(13, 27, 42, 0.35) 100%), url('izobrajenie_2024_08_13_183434322.jpg');">
+             style="background-image: linear-gradient(90deg, rgba(13, 27, 42, 0.82) 0%, rgba(13, 27, 42, 0.55) 45%, rgba(13, 27, 42, 0.15) 100%), url('izobrajenie_2024_08_13_183434322.jpg');">
         
         <div class="relative max-w-[1700px] mx-auto px-6 sm:px-12 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
             <div class="lg:col-span-8 space-y-10">
-                <span class="inline-flex items-center gap-2.5 bg-accent/20 border border-accent/40 text-accent font-semibold px-5 py-2 rounded-full text-xs uppercase tracking-wider backdrop-blur-md">
+                <span class="inline-flex items-center gap-2.5 bg-[#0D1B2A]/70 border border-accent/60 text-accent font-semibold px-5 py-2 rounded-full text-xs uppercase tracking-wider backdrop-blur-md shadow-lg">
                     <span class="w-2.5 h-2.5 rounded-full bg-accent animate-ping"></span>
                     Проектирование и запуск окрасочных цехов под ключ
                 </span>
                 
-                <h1 class="text-white font-extrabold text-4xl sm:text-6xl xl:text-7xl tracking-tight leading-[1.1] drop-shadow-md">
+                <h1 class="text-white font-extrabold text-4xl sm:text-6xl xl:text-7xl tracking-tight leading-[1.1]" style="text-shadow: 0 4px 20px rgba(0,0,0,0.85);">
                     Промышленные окрасочные кабины и автоматические линии окраски
                 </h1>
                 
-                <p class="text-gray-100 text-xl sm:text-2xl max-w-4xl leading-relaxed font-normal drop-shadow">
+                <p class="text-gray-100 text-xl sm:text-2xl max-w-4xl leading-relaxed font-normal" style="text-shadow: 0 2px 12px rgba(0,0,0,0.85);">
                     Проектируем, изготавливаем, поставляем и запускаем передовые комплексы окраски для промышленных предприятий по всей РФ и странам СНГ.
                 </p>
                 
-                <!-- Список преимуществ -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-gray-100">
-                    <div class="flex items-center gap-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-white">
+                    <div class="flex items-center gap-3 bg-[#0D1B2A]/60 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-md">
                         <svg class="w-6 h-6 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                         <span class="text-base font-medium">Индивидуальные инженерные решения</span>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 bg-[#0D1B2A]/60 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-md">
                         <svg class="w-6 h-6 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                         <span class="text-base font-medium">Комплексная реализация под ключ</span>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 bg-[#0D1B2A]/60 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-md">
                         <svg class="w-6 h-6 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                         <span class="text-base font-medium">Автоматизация и роботизация циклов</span>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 bg-[#0D1B2A]/60 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-md">
                         <svg class="w-6 h-6 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                         <span class="text-base font-medium">Собственный шеф-монтаж и ПНР</span>
                     </div>
-                    <div class="flex items-center gap-3 sm:col-span-2">
+                    <div class="flex items-center gap-3 sm:col-span-2 bg-[#0D1B2A]/60 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-md">
                         <svg class="w-6 h-6 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                         <span class="text-base font-medium">Сервисная поддержка и склад оригинальных запчастей</span>
                     </div>
                 </div>
 
                 <div class="pt-4">
-                    <a href="#contact" class="bg-accent hover:bg-accentDark text-white inline-flex items-center justify-center gap-3 font-bold px-10 py-5 rounded-2xl transition-all duration-200 shadow-xl shadow-accent/30 text-base">
+                    <a href="#contact" class="bg-accent hover:bg-accentDark text-white inline-flex items-center justify-center gap-3 font-bold px-10 py-5 rounded-2xl transition-all duration-200 shadow-2xl shadow-accent/40 text-base">
                         Получить инженерную консультацию
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                 </div>
             </div>
 
-            <!-- Блок показателей справа -->
-            <div class="lg:col-span-4 bg-[#1B263B]/85 backdrop-blur-md border border-white/20 p-10 rounded-3xl space-y-8 shadow-2xl">
+            <div class="lg:col-span-4 bg-[#1B263B]/90 backdrop-blur-lg border border-white/20 p-10 rounded-3xl space-y-8 shadow-2xl">
                 <h3 class="text-white font-bold text-2xl border-b border-white/10 pb-5">Статистика инжиниринга</h3>
                 
                 <div class="space-y-6">
@@ -259,12 +271,12 @@
                     </div>
                 </div>
 
-                <div class="bg-[#0D1B2A]/80 p-5 rounded-2xl border border-white/10 space-y-3">
+                <div class="bg-[#0D1B2A]/85 p-5 rounded-2xl border border-white/10 space-y-3">
                     <div class="text-xs uppercase tracking-wider text-accent font-bold">Официальный индустриальный партнер</div>
-                    <div class="flex gap-4 items-center justify-start opacity-90 mt-2">
-                        <span class="text-white text-xs font-bold border border-white/20 px-3 py-1 rounded">SAMES</span>
-                        <span class="text-white text-xs font-bold border border-white/20 px-3 py-1 rounded">Kremlin</span>
-                        <span class="text-white text-xs font-bold border border-white/20 px-3 py-1 rounded">YASKAWA</span>
+                    <div class="flex gap-4 items-center justify-start opacity-95 mt-2">
+                        <span class="text-white text-xs font-bold border border-white/30 px-3 py-1 rounded">SAMES</span>
+                        <span class="text-white text-xs font-bold border border-white/30 px-3 py-1 rounded">Kremlin</span>
+                        <span class="text-white text-xs font-bold border border-white/30 px-3 py-1 rounded">YASKAWA</span>
                     </div>
                 </div>
             </div>
@@ -286,7 +298,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Карта 1 -->
                 <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 space-y-5">
                     <div class="w-14 h-14 bg-red-50 text-red-500 rounded-xl flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -302,7 +313,6 @@
                     </p>
                 </div>
 
-                <!-- Карта 2 -->
                 <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 space-y-5">
                     <div class="w-14 h-14 bg-red-50 text-red-500 rounded-xl flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -317,7 +327,6 @@
                     </p>
                 </div>
 
-                <!-- Карта 3 -->
                 <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 space-y-5">
                     <div class="w-14 h-14 bg-red-50 text-red-500 rounded-xl flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -334,7 +343,6 @@
                     </p>
                 </div>
 
-                <!-- Карта 4 -->
                 <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 space-y-5">
                     <div class="w-14 h-14 bg-red-50 text-red-500 rounded-xl flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -348,7 +356,6 @@
                     </p>
                 </div>
 
-                <!-- Карта 5 -->
                 <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 space-y-5">
                     <div class="w-14 h-14 bg-red-50 text-red-500 rounded-xl flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -363,7 +370,6 @@
                     </p>
                 </div>
 
-                <!-- Карта 6 -->
                 <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 space-y-5">
                     <div class="w-14 h-14 bg-red-50 text-red-500 rounded-xl flex items-center justify-center shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -380,15 +386,14 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 3 — РЕШЕНИЯ НОВАТЕК -->
+    <!-- СЕКЦИЯ 3 — РЕШЕНИЯ НОВАТЕК (ФОТО IZOBRAJENIE_2024_08_16_010112817.JPG) -->
     <section id="solutions" class="py-28 bg-white">
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 <div class="lg:col-span-5 relative group">
                     <div class="absolute -inset-4 bg-accent/10 rounded-3xl scale-95 group-hover:scale-100 transition-transform duration-300"></div>
                     <div class="relative bg-primary overflow-hidden rounded-3xl border border-gray-200/50 shadow-2xl aspect-square">
-                        <img src="watermarked_img_7357259969837753622.png" alt="Окрасочный робот за работой" 
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80'"
+                        <img src="izobrajenie_2024_08_16_010112817.jpg" alt="Инженерные решения НОВАТЕК" 
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-8 left-8 right-8 p-5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/15">
@@ -469,7 +474,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Окрасочные кабины -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
                     <div class="p-8 space-y-5">
                         <div class="h-60 rounded-xl overflow-hidden bg-primary relative">
@@ -492,7 +496,6 @@
                     </div>
                 </div>
 
-                <!-- Покрасочно-сушильные камеры -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
                     <div class="p-8 space-y-5">
                         <div class="h-60 rounded-xl overflow-hidden bg-primary relative">
@@ -515,7 +518,6 @@
                     </div>
                 </div>
 
-                <!-- Сушильные печи -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
                     <div class="p-8 space-y-5">
                         <div class="h-60 rounded-xl overflow-hidden bg-primary relative">
@@ -538,7 +540,6 @@
                     </div>
                 </div>
 
-                <!-- Подготовка поверхности -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
                     <div class="p-8 space-y-5">
                         <div class="h-60 rounded-xl overflow-hidden bg-primary relative">
@@ -561,7 +562,6 @@
                     </div>
                 </div>
 
-                <!-- Автоматические окрасочные линии -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
                     <div class="p-8 space-y-5">
                         <div class="h-60 rounded-xl overflow-hidden bg-primary relative">
@@ -584,7 +584,6 @@
                     </div>
                 </div>
 
-                <!-- Роботизированные окрасочные ячейки -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
                     <div class="p-8 space-y-5">
                         <div class="h-60 rounded-xl overflow-hidden bg-primary relative">
@@ -688,20 +687,17 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ (КАК НА NOVATEK-E.COM) -->
+    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ (С КАРУСЕЛЯМИ ДЛЯ ВСЕХ 4 КЕЙСОВ) -->
     <section id="projects" class="py-20 bg-white border-t border-b border-gray-150">
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
-            <!-- Заголовок секции в стиле novatek-e.com -->
             <div class="mb-10">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0080C8]">
                     Реализованные проекты
                 </h2>
             </div>
 
-            <!-- Главный интерактивный слайдер -->
             <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 flex flex-col lg:flex-row bg-white min-h-[580px]">
                 
-                <!-- Левая плашка с ТЗ -->
                 <div id="projectCardBadge" class="lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#009EE0]">
                     <div class="space-y-6">
                         <span id="projYear" class="text-sm font-semibold tracking-wider opacity-90 block">2023</span>
@@ -721,25 +717,25 @@
                     </div>
                 </div>
 
-                <!-- Правая область с фотографией объекта и стрелками -->
                 <div class="lg:w-[62%] relative bg-gray-950 overflow-hidden flex items-center justify-center min-h-[400px] lg:min-h-full">
                     <img id="mainProjectImg" src="izobrajenie_2024_08_15_235358756.jpg" alt="Реализованный проект НОВАТЕК" 
                          class="w-full h-full object-cover transition-opacity duration-300">
 
-                    <!-- Стрелка влево -->
-                    <button onclick="prevProject()" aria-label="Предыдущий проект" 
+                    <div id="photoCounterBadge" class="absolute top-5 right-5 bg-black/60 backdrop-blur-md text-white font-bold text-xs px-3 py-1.5 rounded-full border border-white/20 z-20">
+                        1 / 5
+                    </div>
+
+                    <button onclick="prevPhoto()" aria-label="Предыдущее фото" 
                             class="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition-all z-20">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                     </button>
-                    <!-- Стрелка вправо -->
-                    <button onclick="nextProject()" aria-label="Следующий проект" 
+                    <button onclick="nextPhoto()" aria-label="Следующее фото" 
                             class="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition-all z-20">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </button>
                 </div>
             </div>
 
-            <!-- Нижняя галерея миниатюр -->
             <div class="grid grid-cols-4 gap-3 sm:gap-6 mt-6">
                 <button onclick="setProject(0)" id="thumb-0" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-[#009EE0] transition-all opacity-100 shadow-md">
                     <img src="izobrajenie_2024_08_15_235358756.jpg" alt="Либхерр" class="w-full h-full object-cover">
@@ -751,14 +747,14 @@
                     <img src="photo_5379886459311489002_y.jpg" alt="Автокомпонент" class="w-full h-full object-cover">
                 </button>
                 <button onclick="setProject(3)" id="thumb-3" class="h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-transparent hover:border-gray-300 transition-all opacity-60 hover:opacity-100">
-                    <img src="izobrajenie_2024_08_15_235928218.jpg" alt="Профессионал" class="w-full h-full object-cover">
+                    <img src="izobrajenie_2024_08_15_235910484.jpg" alt="Профессионал" class="w-full h-full object-cover">
                 </button>
             </div>
         </div>
     </section>
 
     <!-- СЕКЦИЯ 7 — ПОЧЕМУ НОВАТЕК -->
-    <section class="py-28 bg-white">
+    <section id="whyus" class="py-28 bg-white">
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
             <div class="text-center max-w-4xl mx-auto mb-20 space-y-4">
                 <span class="text-accent font-bold text-xs uppercase tracking-widest">Профессиональные компетенции</span>
@@ -828,137 +824,215 @@
                 <div class="absolute top-[32px] left-[4%] right-[4%] h-[2px] bg-gray-200 hidden xl:block"></div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-8 xl:gap-5">
-                    <!-- Шаг 01 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">
-                            01
-                        </div>
+                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">01</div>
                         <h4 class="font-bold text-primary text-base mb-2">Запрос</h4>
-                        <p class="text-mutedText text-xs leading-relaxed">
-                            Оставьте заявку с описанием производственных требований через нашу инженерную форму.
-                        </p>
+                        <p class="text-mutedText text-xs leading-relaxed">Оставьте заявку с описанием производственных требований.</p>
                     </div>
 
-                    <!-- Шаг 02 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">
-                            02
-                        </div>
+                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">02</div>
                         <h4 class="font-bold text-primary text-base mb-2">Аудит</h4>
-                        <p class="text-mutedText text-xs leading-relaxed">
-                            Аудит на объекте: изучение существующего процесса, производственной площадки и целевых показателей.
-                        </p>
+                        <p class="text-mutedText text-xs leading-relaxed">Аудит на объекте: изучение процессов и целевых показателей.</p>
                     </div>
 
-                    <!-- Шаг 03 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">
-                            03
-                        </div>
-                        <h4 class="font-bold text-primary text-base mb-2">Техническая концепция</h4>
-                        <p class="text-mutedText text-xs leading-relaxed">
-                            Инженерная команда разрабатывает системы с 3D-планированием и спецификациями.
-                        </p>
+                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">03</div>
+                        <h4 class="font-bold text-primary text-base mb-2">Концепция</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">Инженерная команда готовит 3D-планировку.</p>
                     </div>
 
-                    <!-- Шаг 04 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">
-                            04
-                        </div>
-                        <h4 class="font-bold text-primary text-base mb-2">Коммерческое предложение</h4>
-                        <p class="text-mutedText text-xs leading-relaxed">
-                            Предложение с фиксированной ценой, графиком проекта, контрольными точками и условиями оплаты.
-                        </p>
+                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">04</div>
+                        <h4 class="font-bold text-primary text-base mb-2">КП</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">Предложение с фиксированной ценой и графиком.</p>
                     </div>
 
-                    <!-- Шаг 05 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">
-                            05
-                        </div>
+                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">05</div>
                         <h4 class="font-bold text-primary text-base mb-2">Производство</h4>
-                        <p class="text-mutedText text-xs leading-relaxed">
-                            Оборудование производится на нашем заводе. Клиент получает обновления на каждом этапе производства.
-                        </p>
+                        <p class="text-mutedText text-xs leading-relaxed">Выпуск конструкций и оборудования на заводе.</p>
                     </div>
 
-                    <!-- Шаг 06 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">
-                            06
-                        </div>
-                        <h4 class="font-bold text-primary text-base mb-2">Монтажные работы</h4>
-                        <p class="text-mutedText text-xs leading-relaxed">
-                            Монтажная команда НОВАТЕК выполняет все механические и электротехнические работы на объекте.
-                        </p>
+                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">06</div>
+                        <h4 class="font-bold text-primary text-base mb-2">Монтаж</h4>
+                        <p class="text-mutedText text-xs leading-relaxed">Механические и электротехнические работы на объекте.</p>
                     </div>
 
-                    <!-- Шаг 07 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">
-                            07
-                        </div>
+                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">07</div>
                         <h4 class="font-bold text-primary text-base mb-2">Пусконаладка</h4>
-                        <p class="text-mutedText text-xs leading-relaxed">
-                            Запуск системы, настройка, обучение операторов и передача полного комплекта документации.
-                        </p>
+                        <p class="text-mutedText text-xs leading-relaxed">Запуск, калибровка систем и обучение персонала.</p>
                     </div>
 
-                    <!-- Шаг 08 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">
-                            08
-                        </div>
+                        <div class="w-16 h-16 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center font-bold text-base text-primary relative z-10 mb-6 transition-all group-hover:border-accent group-hover:shadow-lg">08</div>
                         <h4 class="font-bold text-primary text-base mb-2">Сопровождение</h4>
-                        <p class="text-mutedText text-xs leading-relaxed">
-                            Плановое обслуживание, дистанционная диагностика и поставка запасных частей на весь срок службы.
-                        </p>
+                        <p class="text-mutedText text-xs leading-relaxed">Сервисное обслуживание и запчасти на весь срок службы.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 9 — СЕКЦИЯ ДОВЕРИЯ -->
-    <section class="py-28 bg-primary text-white relative overflow-hidden">
-        <img src="izobrajenie_2024_08_13_183434322.jpg" alt="Промышленная линия" 
-             class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-15">
-        <div class="relative max-w-[1700px] mx-auto px-6 sm:px-12">
-            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                <span class="text-accent font-bold text-xs uppercase tracking-widest">Проверенные технологии</span>
-                <h2 class="text-white font-bold text-3xl sm:text-5xl tracking-tight">
-                    Нам доверяют лидеры российской промышленности
+    <!-- СЕКЦИЯ: НАШИ ЗАКАЗЧИКИ И ПАРТНЕРЫ -->
+    <section id="partners" class="py-24 bg-white border-t border-gray-150">
+        <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
+            <div class="mb-14">
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#2B3A4A]">
+                    <span class="text-[#009EE0]">Наши</span> заказчики и партнеры
                 </h2>
-                <p class="text-gray-300 text-base">
-                    Оборудование НОВАТЕК работает на ключевых машиностроительных и металлообрабатывающих заводах России и СНГ.
-                </p>
             </div>
 
-            <!-- Сетка партнеров -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 items-center justify-items-center opacity-70">
-                <span class="text-white font-black text-2xl tracking-widest border border-white/10 px-8 py-5 rounded-2xl">SAMES Kremlin</span>
-                <span class="text-white font-black text-2xl tracking-widest border border-white/10 px-8 py-5 rounded-2xl">YASKAWA</span>
-                <span class="text-white font-black text-2xl tracking-widest border border-white/10 px-8 py-5 rounded-2xl">ISO 9001:2015</span>
-                <span class="text-white font-black text-2xl tracking-widest border border-white/10 px-8 py-5 rounded-2xl">НОВАТЕК</span>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-10 items-center justify-items-center">
+                <!-- SAMES KREMLIN -->
+                <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center gap-2">
+                        <span class="font-black text-xl tracking-tighter text-black">SAMES</span>
+                        <svg class="w-7 h-7 text-black animate-spin-slow" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1 17.93V15a3 3 0 01-2-2.82V4.07A8 8 0 0120 12a7.92 7.92 0 01-7 7.93zM4.07 11A8 8 0 0111 4.07V9a3 3 0 012 2.82v8.11A8 8 0 014.07 11z"/>
+                        </svg>
+                        <span class="font-black text-xl tracking-tighter text-black">KREMLIN</span>
+                    </div>
+                </div>
+
+                <!-- Чайка Сервис -->
+                <div class="w-full h-24 flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300">
+                    <div class="bg-[#0055A5] text-white px-5 py-2.5 rounded-sm flex flex-col items-center justify-center shadow-sm w-full max-w-[220px]">
+                        <span class="text-[9px] font-bold tracking-wider uppercase opacity-90 leading-none mb-1">Автомобильный завод</span>
+                        <div class="flex items-center gap-1.5 font-black text-lg sm:text-xl tracking-tight leading-tight">
+                            <span>Чайка</span>
+                            <span class="border border-white/60 rounded-full px-1.5 py-0 text-xs">🛈</span>
+                            <span>Сервис</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEFAZ -->
+                <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center gap-2 text-black">
+                        <div class="w-8 h-8 border-4 border-gray-800 rounded-sm flex items-center justify-center font-black text-base shadow-inner">H</div>
+                        <span class="font-black text-2xl tracking-widest">NEFAZ</span>
+                    </div>
+                </div>
+
+                <!-- DAIMLER KAMAZ RUS -->
+                <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
+                    <div class="text-center">
+                        <div class="font-bold text-sm sm:text-base tracking-widest text-[#111827]">DAIMLER KAMAZ RUS</div>
+                        <div class="text-[9px] text-gray-500 tracking-tight font-medium mt-0.5">Trucks and buses to move you forward</div>
+                    </div>
+                </div>
+
+                <!-- ПТМ -->
+                <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center gap-2">
+                        <div class="w-9 h-9 border-4 border-[#F26522] rounded-lg rotate-12 flex items-center justify-center font-black text-xs text-[#0D1B2A]">⬢</div>
+                        <span class="font-black text-3xl tracking-tight text-[#0D1B2A]">ПТМ</span>
+                    </div>
+                </div>
+
+                <!-- Профессионал -->
+                <div class="w-full h-24 flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300">
+                    <div class="bg-[#8B0029] text-white px-5 py-3 rounded-sm flex items-center gap-2.5 shadow-sm w-full max-w-[220px] justify-center">
+                        <span class="border-2 border-white rounded-md px-1.5 py-0.5 font-bold text-xs">pb</span>
+                        <span class="font-black tracking-widest text-sm uppercase">Профессионал</span>
+                    </div>
+                </div>
+
+                <!-- RUS COMTRANS -->
+                <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
+                    <div class="text-center">
+                        <div class="font-black italic text-lg sm:text-xl text-[#0066B3] tracking-tighter">RUS COMTRANS</div>
+                        <div class="text-[8px] tracking-[0.25em] text-[#0066B3] font-semibold mt-0.5 uppercase">New Times Technics</div>
+                    </div>
+                </div>
+
+                <!-- DEMFA -->
+                <div class="w-full h-24 flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300">
+                    <div class="bg-black text-white px-5 py-2.5 rounded-sm flex flex-col items-center justify-center shadow-sm w-full max-w-[220px]">
+                        <span class="font-serif tracking-widest text-lg sm:text-xl font-bold">DEMFA</span>
+                        <span class="text-[7px] tracking-[0.15em] uppercase text-gray-300 font-sans">Interior Door Factory</span>
+                    </div>
+                </div>
+
+                <!-- VOLGABUS -->
+                <div class="w-full h-24 flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300">
+                    <div class="bg-[#005CA9] text-white px-6 py-3 rounded-sm flex items-center justify-center shadow-sm w-full max-w-[220px]">
+                        <span class="font-black text-lg tracking-wider">VOLGABUS</span>
+                    </div>
+                </div>
+
+                <!-- Autocomponent -->
+                <div class="w-full h-24 flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center gap-1 font-extrabold text-lg sm:text-xl text-black">
+                        <span>Autocomponent</span>
+                        <span class="text-orange-500 font-black">/</span>
+                        <span class="text-amber-500 font-black">/</span>
+                        <span class="text-teal-500 font-black">/</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: НАШИ КОНТАКТЫ С КАРТОЙ (ПО СКРИНШОТУ NOVATEK-E.COM) -->
+    <section id="contacts" class="py-20 bg-[#222222] text-white border-t border-gray-800">
+        <div class="max-w-[1700px] mx-auto px-6 sm:px-12">
+            <div class="mb-12">
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                    <span class="text-[#009EE0]">Наши</span> контакты
+                </h2>
             </div>
 
-            <!-- Метрики качества -->
-            <div class="border-t border-white/10 pt-20 grid grid-cols-1 md:grid-cols-3 gap-14 text-center">
-                <div class="space-y-3">
-                    <div class="text-accent font-black text-6xl text-glow">15+ лет</div>
-                    <div class="text-base font-bold uppercase text-gray-200">Безупречной репутации</div>
-                    <p class="text-sm text-gray-400 max-w-sm mx-auto">Инжиниринговое бюро непрерывно работает на рынке проектирования окраски с 2011 года.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#2C2C2C]">
+                <!-- Яндекс Карта -->
+                <div class="lg:col-span-6 min-h-[380px] sm:min-h-[440px] relative bg-gray-800">
+                    <iframe 
+                        src="https://yandex.ru/map-widget/v1/?ll=44.045618%2C56.297489&z=14&pt=44.045618,56.297489,pm2blm" 
+                        class="w-full h-full min-h-[380px] sm:min-h-[440px] border-0" 
+                        allowfullscreen="true" 
+                        loading="lazy" 
+                        title="Карта расположения ООО НОВАТЕК">
+                    </iframe>
                 </div>
-                <div class="space-y-3">
-                    <div class="text-accent font-black text-6xl text-glow">10+ заводов</div>
-                    <div class="text-base font-bold uppercase text-gray-200">Реализовано в СНГ</div>
-                    <p class="text-sm text-gray-400 max-w-sm mx-auto">Кабины, сушки и комплексные роботизированные конвейеры работают под нашим надзором.</p>
-                </div>
-                <div class="space-y-3">
-                    <div class="text-accent font-black text-6xl text-glow">99.8%</div>
-                    <div class="text-base font-bold uppercase text-gray-200">Коэффициент готовности</div>
-                    <p class="text-sm text-gray-400 max-w-sm mx-auto">Промышленные комплексы спроектированы для беспрерывной работы в три смены 365 дней в году.</p>
+
+                <!-- Реквизиты -->
+                <div class="lg:col-span-6 p-8 sm:p-14 flex flex-col justify-center space-y-7 bg-[#2C2C2C]">
+                    <h3 class="text-2xl sm:text-3xl font-bold tracking-tight">
+                        ООО <span class="text-[#009EE0]">"НОВАТЕК"</span>
+                    </h3>
+
+                    <div class="space-y-5 text-gray-200 text-base sm:text-lg">
+                        <div class="flex items-center gap-4">
+                            <svg class="w-6 h-6 text-gray-300 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <a href="mailto:info@novatek-e.com" class="hover:text-[#009EE0] transition-colors">
+                                info@novatek-e.com
+                            </a>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <svg class="w-6 h-6 text-gray-300 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <a href="tel:+78314238593" class="font-semibold hover:text-[#009EE0] transition-colors">
+                                +7 (831) 423-85-93
+                            </a>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <svg class="w-6 h-6 text-gray-300 shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span class="leading-relaxed">
+                                г. Нижний Новгород, улица Ванеева, д. 127, помещ. П17
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -976,7 +1050,6 @@
             </div>
 
             <div class="space-y-5">
-                <!-- Вопрос 1 -->
                 <div class="border border-gray-200 rounded-2xl overflow-hidden">
                     <button class="w-full text-left p-7 font-bold text-primary flex justify-between items-center bg-lightBg/40 hover:bg-lightBg transition-colors text-lg" onclick="toggleAccordion(1)">
                         <span>Сколько стоит промышленная окрасочная кабина?</span>
@@ -987,7 +1060,6 @@
                     </div>
                 </div>
 
-                <!-- Вопрос 2 -->
                 <div class="border border-gray-200 rounded-2xl overflow-hidden">
                     <button class="w-full text-left p-7 font-bold text-primary flex justify-between items-center bg-lightBg/40 hover:bg-lightBg transition-colors text-lg" onclick="toggleAccordion(2)">
                         <span>Каковы сроки проектирования и поставки оборудования?</span>
@@ -998,7 +1070,6 @@
                     </div>
                 </div>
 
-                <!-- Вопрос 3 -->
                 <div class="border border-gray-200 rounded-2xl overflow-hidden">
                     <button class="w-full text-left p-7 font-bold text-primary flex justify-between items-center bg-lightBg/40 hover:bg-lightBg transition-colors text-lg" onclick="toggleAccordion(3)">
                         <span>Возможно ли интегрировать роботов в существующую окрасочную линию?</span>
@@ -1009,7 +1080,6 @@
                     </div>
                 </div>
 
-                <!-- Вопрос 4 -->
                 <div class="border border-gray-200 rounded-2xl overflow-hidden">
                     <button class="w-full text-left p-7 font-bold text-primary flex justify-between items-center bg-lightBg/40 hover:bg-lightBg transition-colors text-lg" onclick="toggleAccordion(4)">
                         <span>Предоставляет ли ваша компания услуги монтажа и пусконаладки?</span>
@@ -1020,7 +1090,6 @@
                     </div>
                 </div>
 
-                <!-- Вопрос 5 -->
                 <div class="border border-gray-200 rounded-2xl overflow-hidden">
                     <button class="w-full text-left p-7 font-bold text-primary flex justify-between items-center bg-lightBg/40 hover:bg-lightBg transition-colors text-lg" onclick="toggleAccordion(5)">
                         <span>Какая гарантия предоставляется на готовое оборудование?</span>
@@ -1031,7 +1100,6 @@
                     </div>
                 </div>
 
-                <!-- Вопрос 6 -->
                 <div class="border border-gray-200 rounded-2xl overflow-hidden">
                     <button class="w-full text-left p-7 font-bold text-primary flex justify-between items-center bg-lightBg/40 hover:bg-lightBg transition-colors text-lg" onclick="toggleAccordion(6)">
                         <span>Каким образом осуществляется сервисная поддержка в регионах РФ?</span>
@@ -1045,7 +1113,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 11 — ФОРМА ТЗ -->
+    <!-- СЕКЦИЯ 11 — ФОРМА ТЗ (ТРЕБОВАНИЕ 152-ФЗ / РКН: СОГЛАСИЕ И НЕПРЕДУСТАНОВЛЕННЫЙ ЧЕКБОКС) -->
     <section id="contact" class="py-28 bg-lightBg border-t border-gray-200">
         <div class="max-w-[1200px] mx-auto px-6 sm:px-12">
             <div class="bg-white rounded-3xl border border-gray-150 shadow-2xl p-10 sm:p-16 relative overflow-hidden">
@@ -1096,9 +1164,15 @@
                         </div>
                     </div>
 
-                    <p class="text-xs text-mutedText leading-relaxed">
-                        Нажимая на кнопку, вы соглашаетесь на обработку ваших персональных данных в соответствии с ФЗ-152 и подтверждаете согласие с Политикой конфиденциальности НОВАТЕК Инжиниринг.
-                    </p>
+                    <!-- ТРЕБОВАНИЕ РКН: Непредустановленный чекбокс согласия -->
+                    <div class="flex items-start gap-3 pt-2">
+                        <input type="checkbox" id="consentCheckbox" required class="mt-1 w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent cursor-pointer">
+                        <label for="consentCheckbox" class="text-xs text-mutedText leading-relaxed cursor-pointer select-none">
+                            Я подтверждаю свое согласие на обработку персональных данных в соответствии с 
+                            <button type="button" onclick="openPolicyModal('consent')" class="text-accent underline hover:text-accentDark">Согласием на обработку персональных данных</button> и 
+                            <button type="button" onclick="openPolicyModal('privacy')" class="text-accent underline hover:text-accentDark">Политикой обработки персональных данных</button> оператора ООО «НОВАТЕК» согласно Федеральному закону № 152-ФЗ.
+                        </label>
+                    </div>
 
                     <button type="submit" class="w-full bg-accent hover:bg-accentDark text-white font-bold py-5 rounded-2xl text-base transition-all duration-200 shadow-xl shadow-accent/20 flex items-center justify-center gap-3">
                         Отправить запрос на расчет предложения
@@ -1109,7 +1183,7 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
+    <!-- ПОДВАЛ СО ВСЕМИ ОБЯЗАТЕЛЬНЫМИ ЮРИДИЧЕСКИМИ ССЫЛКАМИ РКН -->
     <footer class="bg-primary text-gray-400 text-sm py-20 border-t border-secondary">
         <div class="max-w-[1700px] mx-auto px-6 sm:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
             <div class="lg:col-span-2 space-y-5">
@@ -1122,8 +1196,10 @@
                 <p class="text-sm leading-relaxed text-gray-400 max-w-md">
                     Инжиниринговый центр НОВАТЕК занимается комплексным проектированием, производством и внедрением автоматизированных окрасочных производств под ключ для предприятий машиностроения и ОПК.
                 </p>
-                <div class="text-xs text-gray-500">
-                    © 2026 НОВАТЕК Инжиниринг. Все права защищены. <br>Любое копирование материалов преследуется по закону.
+                <div class="text-xs text-gray-500 leading-relaxed">
+                    © 2026 ООО «НОВАТЕК». Все права защищены. <br>
+                    ОГРН: 1205200000000 | ИНН: 5262000000 <br>
+                    Нижний Новгород, Россия.
                 </div>
             </div>
 
@@ -1149,14 +1225,30 @@
                 </ul>
             </div>
 
+            <!-- ТРЕБОВАНИЕ РКН: Раздел правовых документов 152-ФЗ -->
             <div class="space-y-4">
-                <h5 class="text-white font-bold text-xs uppercase tracking-wider">Проекты</h5>
+                <h5 class="text-white font-bold text-xs uppercase tracking-wider">Правовая информация</h5>
                 <ul class="space-y-3 text-sm">
-                    <li><a href="#projects" class="hover:text-accent transition-colors">Автомобилестроение</a></li>
-                    <li><a href="#projects" class="hover:text-accent transition-colors">Машиностроение</a></li>
-                    <li><a href="#projects" class="hover:text-accent transition-colors">Оборонно-промышленный комплекс</a></li>
-                    <li><a href="#projects" class="hover:text-accent transition-colors">Металлообработка</a></li>
-                    <li><a href="#projects" class="hover:text-accent transition-colors">Железнодорожная техника</a></li>
+                    <li>
+                        <button type="button" onclick="openPolicyModal('privacy')" class="hover:text-accent transition-colors text-left">
+                            Политика обработки ПДн (152-ФЗ)
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" onclick="openPolicyModal('consent')" class="hover:text-accent transition-colors text-left">
+                            Согласие на обработку данных
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" onclick="openPolicyModal('cookie')" class="hover:text-accent transition-colors text-left">
+                            Политика использования Cookie
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" onclick="openPolicyModal('terms')" class="hover:text-accent transition-colors text-left">
+                            Пользовательское соглашение
+                        </button>
+                    </li>
                 </ul>
             </div>
 
@@ -1165,22 +1257,171 @@
                 <ul class="space-y-3 text-sm text-gray-400">
                     <li class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                        <a href="tel:+78314238493" class="hover:text-accent transition-colors">+7 (831) 423-84-93</a>
+                        <a href="tel:+78314238593" class="hover:text-accent transition-colors">+7 (831) 423-85-93</a>
                     </li>
                     <li class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         <a href="mailto:info@novatek-e.com" class="hover:text-accent transition-colors">info@novatek-e.com</a>
                     </li>
                     <li class="text-xs leading-relaxed text-gray-500 pt-2">
-                        Нижний Новгород, Россия, пр. Гагарина, д. 50
+                        г. Нижний Новгород, улица Ванеева, д. 127, помещ. П17
                     </li>
                 </ul>
             </div>
         </div>
     </footer>
 
-    <!-- Скрипты интерактивности: меню, аккордеон и слайдер проектов novatek-e.com -->
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ДОКУМЕНТОВ РОСКОМНАДЗОРА -->
+    <div id="policyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 sm:p-6">
+        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden animate-fade-in">
+            <!-- Шапка модального окна -->
+            <div class="p-6 sm:p-8 bg-primary text-white flex justify-between items-center border-b border-secondary">
+                <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold tracking-tight">Документ</h3>
+                <button onclick="closePolicyModal()" class="text-gray-400 hover:text-white p-2 rounded-xl transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <!-- Тело документа со скроллом -->
+            <div id="modalContent" class="p-6 sm:p-10 overflow-y-auto text-sm sm:text-base text-gray-700 leading-relaxed space-y-6">
+                <!-- Контент подставляется скриптом -->
+            </div>
+            <!-- Подвал модального окна -->
+            <div class="p-5 sm:p-6 bg-lightBg border-t border-gray-200 flex justify-end">
+                <button onclick="closePolicyModal()" class="bg-primary hover:bg-secondary text-white font-bold px-8 py-3 rounded-xl text-sm transition">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты: интерактив сайта, РКН модальные окна, куки-баннер и слайдер проектов -->
     <script>
+        // ТЕКСТЫ ЮРИДИЧЕСКИХ ДОКУМЕНТОВ РКН (152-ФЗ)
+        const legalDocs = {
+            privacy: {
+                title: "Политика в отношении обработки персональных данных",
+                html: `
+                    <div class="space-y-4">
+                        <p class="text-xs text-mutedText font-semibold">Утверждена Приказом Генерального директора ООО «НОВАТЕК» № 01-ПД от 10.01.2026 г.</p>
+                        
+                        <h4 class="font-bold text-primary text-lg">1. Общие положения</h4>
+                        <p>Настоящая Политика обработки персональных данных (далее — «Политика») составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок сбора, хранения, обработки и защиты персональных данных, осуществляемых Обществом с ограниченной ответственностью «НОВАТЕК» (далее — «Оператор»).</p>
+                        <p>Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
+
+                        <h4 class="font-bold text-primary text-lg">2. Основные понятия</h4>
+                        <p><strong>Персональные данные</strong> — любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю сайта novatek-e.com.</p>
+                        <p><strong>Обработка персональных данных</strong> — любое действие (операция) или совокупность действий, совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными.</p>
+
+                        <h4 class="font-bold text-primary text-lg">3. Категории и цели обработки персональных данных</h4>
+                        <p>Оператор обрабатывает следующие персональные данные Пользователей:</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Фамилия, имя, отчество;</li>
+                            <li>Номер контактного телефона;</li>
+                            <li>Адрес электронной почты (e-mail);</li>
+                            <li>Наименование представляемой организации и должность;</li>
+                            <li>Обезличенные данные о посетителях (в т.ч. файлы «cookie») с помощью сервисов интернет-статистики.</li>
+                        </ul>
+                        <p><strong>Цели обработки:</strong> подготовка технико-коммерческих предложений, консультирование по вопросам поставки окрасочного оборудования, заключение и исполнение договоров поставки, монтажа и пусконаладочных работ, информирование о новых решениях компании.</p>
+
+                        <h4 class="font-bold text-primary text-lg">4. Порядок сбора, хранения и локализация данных</h4>
+                        <p>Безопасность персональных данных обеспечивается путем реализации правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований действующего законодательства в области защиты персональных данных.</p>
+                        <p><strong>Требование ч. 5 ст. 18 152-ФЗ:</strong> При сборе персональных данных Оператор обеспечивает запись, систематизацию, накопление, хранение, уточнение и извлечение персональных данных граждан Российской Федерации с использованием баз данных, находящихся исключительно на территории Российской Федерации.</p>
+
+                        <h4 class="font-bold text-primary text-lg">5. Сроки обработки и уничтожение данных</h4>
+                        <p>Срок обработки персональных данных является неограниченным до момента отзыва согласия субъектом персональных данных. Персональные данные подлежат уничтожению либо обезличиванию по достижении целей обработки или в случае утраты необходимости в достижении этих целей, а также при получении письменного отзыва согласия.</p>
+
+                        <h4 class="font-bold text-primary text-lg">6. Права субъекта персональных данных и порядок отзыва</h4>
+                        <p>Пользователь может в любой момент отозвать свое согласие на обработку персональных данных, направив Оператору официальное уведомление посредством электронной почты на адрес: <strong>info@novatek-e.com</strong> или почтовым отправлением по адресу: <strong>603000, г. Нижний Новгород, улица Ванеева, д. 127, помещ. П17, ООО «НОВАТЕК»</strong>.</p>
+                    </div>
+                `
+            },
+            consent: {
+                title: "Согласие на обработку персональных данных",
+                html: `
+                    <div class="space-y-4">
+                        <p>В соответствии с требованиями статьи 9 Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных», свободно, своей волей и в своем интересе даю конкретное, информированное и сознательное согласие Обществу с ограниченной ответственностью «НОВАТЕК» (ИНН: 5262000000, ОГРН: 1205200000000, адрес: г. Нижний Новгород, улица Ванеева, д. 127, помещ. П17) на обработку моих персональных данных со следующими условиями:</p>
+                        <h4 class="font-bold text-primary text-base">1. Перечень данных, на которые дается согласие:</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li>Фамилия, имя, отчество;</li>
+                            <li>Контактный номер телефона;</li>
+                            <li>Адрес электронной почты;</li>
+                            <li>Наименование компании и сведения о проекте/заказе;</li>
+                            <li>Файлы, прикрепленные к форме заявки (чертежи, ТЗ, спецификации).</li>
+                        </ul>
+                        <h4 class="font-bold text-primary text-base">2. Перечень действий с данными:</h4>
+                        <p>Сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача штатным сервисным и инженерным специалистам, обезличивание, блокирование, удаление, уничтожение персональных данных.</p>
+                        <h4 class="font-bold text-primary text-base">3. Срок действия согласия:</h4>
+                        <p>Настоящее согласие действует бессрочно с момента его предоставления и может быть отозвано в любой момент путем направления письменного заявления Оператору на электронную почту info@novatek-e.com.</p>
+                    </div>
+                `
+            },
+            cookie: {
+                title: "Политика использования файлов Cookie",
+                html: `
+                    <div class="space-y-4">
+                        <p>Сайт novatek-e.com использует файлы cookie (куки) и сервисы веб-аналитики для сбора технической информации с целью улучшения взаимодействия с пользователем и повышения эффективности работы веб-ресурса.</p>
+                        <h4 class="font-bold text-primary text-base">1. Что такое файлы Cookie?</h4>
+                        <p>Файлы cookie — это небольшие текстовые фрагменты данных, передаваемые в браузер с сайта, который вы посетили. Они помогают сайту запомнить информацию о вас, например язык интерфейса и другие параметры.</p>
+                        <h4 class="font-bold text-primary text-base">2. Какие типы файлов cookie мы используем:</h4>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Обязательные (технические):</strong> необходимы для функционирования систем сайта и навигации;</li>
+                            <li><strong>Аналитические (Яндекс.Метрика):</strong> позволяют вести подсчет посетителей и анализировать источники трафика без сбора персонализированных учетных записей. Все данные обрабатываются на серверах в РФ.</li>
+                        </ul>
+                        <h4 class="font-bold text-primary text-base">3. Управление Cookie:</h4>
+                        <p>Вы можете в любой момент отключить сохранение файлов cookie или удалить уже сохраненные файлы в настройках вашего веб-браузера.</p>
+                    </div>
+                `
+            },
+            terms: {
+                title: "Пользовательское соглашение",
+                html: `
+                    <div class="space-y-4">
+                        <p>Настоящее Пользовательское соглашение регулирует отношения между ООО «НОВАТЕК» и посетителем сайта novatek-e.com.</p>
+                        <p>Информация об оборудовании, габаритах кабин и технических характеристиках, опубликованная на сайте, носит исключительно информационный характер и не является публичной офертой, определяемой положениями Статьи 437 (2) Гражданского кодекса РФ.</p>
+                        <p>Все технические параметры оборудования подлежат утверждению в индивидуальном Техническом Задании (ТЗ) и Договоре поставки.</p>
+                    </div>
+                `
+            }
+        };
+
+        // Функции модального окна документов
+        function openPolicyModal(docKey) {
+            const modal = document.getElementById('policyModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            if (legalDocs[docKey]) {
+                title.textContent = legalDocs[docKey].title;
+                content.innerHTML = legalDocs[docKey].html;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closePolicyModal() {
+            const modal = document.getElementById('policyModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Управление баннером Cookie
+        function checkCookieConsent() {
+            if (!localStorage.getItem('novatek_cookie_accepted')) {
+                setTimeout(() => {
+                    const banner = document.getElementById('cookieBanner');
+                    banner.classList.remove('translate-y-full');
+                }, 1000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('novatek_cookie_accepted', 'true');
+            const banner = document.getElementById('cookieBanner');
+            banner.classList.add('translate-y-full');
+        }
+
         // Мобильное меню
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
@@ -1212,7 +1453,7 @@
             }
         }
 
-        // Данные слайдера проектов в точности по novatek-e.com
+        // Данные слайдера проектов со всеми каруселями
         const projectData = [
             {
                 year: "2023",
@@ -1220,7 +1461,13 @@
                 city: "Нижний Новгород",
                 subtitle: "Линия окраски крупногабаритных изделий:",
                 theme: "blue",
-                img: "izobrajenie_2024_08_15_235358756.jpg",
+                images: [
+                    "izobrajenie_2024_08_15_235358756.jpg",
+                    "izobrajenie_2024_08_15_235339423.jpg",
+                    "izobrajenie_2024_08_15_235348690.jpg",
+                    "izobrajenie_2024_08_13_183434322.jpg",
+                    "izobrajenie_2024_11_08_110642323.png"
+                ],
                 items: [
                     "Окрасочно-сушильные камеры (2 ед.)",
                     "Камера мойки и подготовки изделий (1 ед.)",
@@ -1233,7 +1480,14 @@
                 city: "Нижний Новгород",
                 subtitle: "Линия окраски изделий:",
                 theme: "blue",
-                img: "bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg",
+                images: [
+                    "bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg",
+                    "00c0dc98_2f7c_4083_bba3_b56ab295df60.jpg",
+                    "0ae59fe9_0766_418c_9566_21baa36a7777.jpg",
+                    "11a1feac_e159_40f7_ae8c_2b35ee49202e.jpg",
+                    "1c874216_05eb_4512_bf11_2312331acaec.jpg",
+                    "2c0fbca2_e473_41e9_81e2_589102b6c9f3.jpg"
+                ],
                 items: [
                     "Окрасочные роботы (2 ед.)",
                     "Роботы открывания дверей оборудованных дополнительно двумя осями перемещений (2 ед.)",
@@ -1246,7 +1500,12 @@
                 city: "Тольятти",
                 subtitle: "Автоматическая линия окраски колпаков колесных дисков:",
                 theme: "dark",
-                img: "photo_5379886459311489002_y.jpg",
+                images: [
+                    "photo_5379886459311489002_y.jpg",
+                    "photo_5379622851398729806_y.jpg",
+                    "photo_5379886459311488999_y.jpg",
+                    "photo_5379886459311489000_y.jpg"
+                ],
                 items: [
                     "Конвейерная система (1 ед.)",
                     "Блок подготовки и перемещения воздуха AHU (1 ед.)",
@@ -1262,7 +1521,13 @@
                 city: "Иваново",
                 subtitle: "Линия окраски габаритных изделий:",
                 theme: "dark",
-                img: "izobrajenie_2024_08_15_235928218.jpg",
+                images: [
+                    "izobrajenie_2024_08_15_235910484.jpg",
+                    "izobrajenie_2024_08_15_235928218.jpg",
+                    "izobrajenie_2024_08_15_235942860.png",
+                    "izobrajenie_2024_08_15_235953938.png",
+                    "izobrajenie_2024_11_08_110710027.png"
+                ],
                 items: [
                     "Окрасочная камера (1 ед.)",
                     "Камера выдержки (1 ед.)",
@@ -1273,33 +1538,33 @@
         ];
 
         let curProjIdx = 0;
+        let curPhotoIdx = 0;
 
-        function renderProject(idx) {
-            const p = projectData[idx];
+        function updateProjectDisplay() {
+            const p = projectData[curProjIdx];
             const badge = document.getElementById("projectCardBadge");
             const img = document.getElementById("mainProjectImg");
+            const counter = document.getElementById("photoCounterBadge");
             
-            // Плавная смена фотографии
             img.style.opacity = '0';
             setTimeout(() => {
-                img.src = p.img;
+                img.src = p.images[curPhotoIdx];
                 img.style.opacity = '1';
             }, 120);
 
-            // Текстовые блоки
+            counter.textContent = `${curPhotoIdx + 1} / ${p.images.length}`;
+
             document.getElementById("projYear").textContent = p.year;
             document.getElementById("projTitle").textContent = p.title;
             document.getElementById("projCity").textContent = "город: " + p.city;
             document.getElementById("projSubtitle").textContent = p.subtitle;
 
-            // Цветовая тема (синяя / темная)
             if (p.theme === "blue") {
                 badge.className = "lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#009EE0]";
             } else {
                 badge.className = "lg:w-[38%] p-8 sm:p-12 flex flex-col justify-between text-white transition-colors duration-500 bg-[#363636]";
             }
 
-            // Список оборудования
             const listContainer = document.getElementById("projList");
             listContainer.innerHTML = "";
             p.items.forEach(item => {
@@ -1314,10 +1579,9 @@
                 listContainer.appendChild(el);
             });
 
-            // Обновление рамок у миниатюр
             for (let i = 0; i < projectData.length; i++) {
                 const thumb = document.getElementById(`thumb-${i}`);
-                if (i === idx) {
+                if (i === curProjIdx) {
                     thumb.className = "h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-[#009EE0] transition-all opacity-100 shadow-md";
                 } else {
                     thumb.className = "h-20 sm:h-28 rounded-xl overflow-hidden border-4 border-transparent hover:border-gray-300 transition-all opacity-60 hover:opacity-100";
@@ -1327,20 +1591,22 @@
 
         function setProject(idx) {
             curProjIdx = idx;
-            renderProject(curProjIdx);
+            curPhotoIdx = 0;
+            updateProjectDisplay();
         }
 
-        function nextProject() {
-            curProjIdx = (curProjIdx + 1) % projectData.length;
-            renderProject(curProjIdx);
+        function nextPhoto() {
+            const p = projectData[curProjIdx];
+            curPhotoIdx = (curPhotoIdx + 1) % p.images.length;
+            updateProjectDisplay();
         }
 
-        function prevProject() {
-            curProjIdx = (curProjIdx - 1 + projectData.length) % projectData.length;
-            renderProject(curProjIdx);
+        function prevPhoto() {
+            const p = projectData[curProjIdx];
+            curPhotoIdx = (curPhotoIdx - 1 + p.images.length) % p.images.length;
+            updateProjectDisplay();
         }
 
-        // Показ уведомления
         function showToast(title, message) {
             const toast = document.getElementById('toastNotification');
             const toastTitle = document.getElementById('toastTitle');
@@ -1358,7 +1624,6 @@
             }, 5000);
         }
 
-        // Загрузка файла
         function handleFileSelect(event) {
             const file = event.target.files[0];
             const label = document.getElementById('fileNameLabel');
@@ -1368,18 +1633,23 @@
             }
         }
 
-        // Отправка формы
         function handleFormSubmit(event) {
             event.preventDefault();
+            const consent = document.getElementById('consentCheckbox');
+            if (!consent.checked) {
+                alert('Пожалуйста, подтвердите согласие на обработку персональных данных в соответствии с требованиями 152-ФЗ.');
+                return;
+            }
+
             document.getElementById('engineeringForm').reset();
             document.getElementById('fileNameLabel').textContent = 'Загрузите файл Технического Задания (ТЗ) или чертежи';
             document.getElementById('fileNameLabel').classList.remove('text-accent');
             showToast('Предложение формируется', 'Инженер департамента окрасочных технологий НОВАТЕК свяжется с вами для согласования ТЗ.');
         }
 
-        // Инициализация первого проекта при загрузке
         window.addEventListener("DOMContentLoaded", () => {
-            renderProject(0);
+            updateProjectDisplay();
+            checkCookieConsent();
         });
     </script>
 </body>
