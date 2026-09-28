@@ -115,14 +115,14 @@
 
     <!-- Промышленный хедер -->
     <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-gray-150 transition-all duration-300">
-        <div class="bg-primary text-gray-400 text-xs py-2 px-4 sm:px-8 hidden lg:flex justify-between items-center border-b border-secondary">
+        <!-- Верхняя техническая панель: без ISO и без Kremlin -->
+        <div class="bg-primary text-gray-400 text-xs py-2 px-6 lg:px-12 hidden lg:flex justify-between items-center border-b border-secondary">
             <div class="flex items-center gap-6">
                 <span class="flex items-center gap-2 text-gray-300 font-medium">
                     <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
                     Инжиниринговый центр активен
                 </span>
-                <span>Сертификация менеджмента качества ISO 9001:2015</span>
-                <span>Статус: официальный интегратор SAMES Kremlin / YASKAWA</span>
+                <span class="border-l border-gray-700 pl-6">Статус: официальный интегратор SAMES / YASKAWA</span>
             </div>
             <div class="flex items-center gap-6">
                 <a href="mailto:info@novatek-e.com" class="hover:text-accent transition-colors flex items-center gap-1.5">
@@ -136,32 +136,34 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group shrink-0">
-                <img src="./image001.png" alt="НОВАТЕК Логотип" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo-header').classList.remove('hidden')">
+        <!-- Основная панель навигации -->
+        <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 h-20 flex items-center justify-between">
+            <!-- Логотип сдвинут влево -->
+            <a href="#" class="flex items-center gap-4 group shrink-0">
+                <img src="./image001.png" alt="НОВАТЕК Логотип" class="h-10 sm:h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo-header').classList.remove('hidden')">
                 <div id="fallback-logo-header" class="hidden flex items-center">
-                    <span class="text-primary font-black text-2xl tracking-tight">NOVA<span class="text-accent">TEK</span></span>
+                    <span class="text-primary font-black text-2xl sm:text-3xl tracking-tight">NOVA<span class="text-accent">TEK</span></span>
                 </div>
-                <div class="hidden sm:flex flex-col border-l border-gray-200 pl-3">
-                    <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-mutedText leading-tight">НОВАТЕК ИНЖИНИРИНГ</span>
-                    <span class="text-[8px] uppercase tracking-[0.06em] text-gray-400 mt-0.5">Окрасочные комплексы под ключ</span>
+                <div class="hidden sm:flex flex-col border-l border-gray-200 pl-4 py-0.5">
+                    <span class="text-[11px] uppercase tracking-[0.22em] font-bold text-mutedText leading-tight">НОВАТЕК ИНЖИНИРИНГ</span>
+                    <span class="text-[9px] uppercase tracking-[0.06em] text-gray-400 mt-0.5">Окрасочные комплексы под ключ</span>
                 </div>
             </a>
 
-            <!-- Навигация десктоп с аккуратными отступами -->
-            <div class="hidden lg:flex items-center">
-                <nav class="flex items-center gap-5 xl:gap-7">
-                    <a href="#equipment" class="text-primary hover:text-accent font-semibold text-sm transition-colors py-2">Оборудование</a>
-                    <a href="#solutions" class="text-primary hover:text-accent font-semibold text-sm transition-colors py-2">Технологии</a>
-                    <a href="#projects" class="text-primary hover:text-accent font-semibold text-sm transition-colors py-2">Проекты</a>
-                    <a href="#timeline" class="text-primary hover:text-accent font-semibold text-sm transition-colors py-2">Процесс</a>
-                    <a href="#partners" class="text-primary hover:text-accent font-semibold text-sm transition-colors py-2">Партнеры</a>
-                    <a href="#contacts" class="text-primary hover:text-accent font-semibold text-sm transition-colors py-2">Контакты</a>
-                    <a href="#faq" class="text-primary hover:text-accent font-semibold text-sm transition-colors py-2">FAQ</a>
+            <!-- Навигация десктоп -->
+            <div class="hidden lg:flex items-center gap-8 xl:gap-10">
+                <nav class="flex items-center gap-6 xl:gap-8">
+                    <a href="#equipment" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">Оборудование</a>
+                    <a href="#solutions" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">Технологии</a>
+                    <a href="#projects" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">Проекты</a>
+                    <a href="#timeline" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">Процесс</a>
+                    <a href="#partners" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">Партнеры</a>
+                    <a href="#contacts" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">Контакты</a>
+                    <a href="#faq" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">FAQ</a>
                 </nav>
 
-                <!-- Обособленная кнопка со смещением и четким отступом от FAQ -->
-                <div class="ml-6 xl:ml-8 pl-6 xl:pl-8 border-l border-gray-200">
+                <!-- Обособленная кнопка -->
+                <div class="pl-6 border-l border-gray-200">
                     <a href="#contact" class="btn-header-gradient text-white font-bold px-6 py-2.5 rounded-xl text-xs sm:text-sm tracking-wide inline-flex items-center justify-center whitespace-nowrap border border-white/20 select-none">
                         Заказать проект
                     </a>
@@ -274,16 +276,15 @@
                 <div class="bg-[#0D1B2A]/85 p-3.5 rounded-xl border border-white/10 space-y-2">
                     <div class="text-[10px] sm:text-xs uppercase tracking-wider text-accent font-bold">Официальный индустриальный партнер</div>
                     <div class="flex gap-2 items-center justify-start flex-wrap">
-                        <span class="text-white text-[11px] font-bold border border-white/30 px-2.5 py-0.5 rounded">SAMES</span>
-                        <span class="text-white text-[11px] font-bold border border-white/30 px-2.5 py-0.5 rounded">Kremlin</span>
-                        <span class="text-white text-[11px] font-bold border border-white/30 px-2.5 py-0.5 rounded">YASKAWA</span>
+                        <span class="text-white text-xs font-bold border border-white/30 px-3 py-1 rounded">SAMES</span>
+                        <span class="text-white text-xs font-bold border border-white/30 px-3 py-1 rounded">YASKAWA</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 2 — ПРОБЛЕМЫ КЛИЕНТА (С ТОЧНЫМИ ТЕМАТИЧЕСКИМИ ИКОНКАМИ) -->
+    <!-- СЕКЦИЯ 2 — ПРОБЛЕМЫ КЛИЕНТА -->
     <section class="py-16 sm:py-24 bg-lightBg bg-topographic-waves border-b border-gray-200/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
@@ -295,7 +296,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-                <!-- 1. Нестабильное качество покрытия -->
                 <div class="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-150 shadow-sm hover:shadow-lg transition-all space-y-4">
                     <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -308,7 +308,6 @@
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Пыль, подтеки, неравномерная толщина слоя и недостаточный глянец из-за плохой вентиляции.</p>
                 </div>
 
-                <!-- 2. Высокий процент брака -->
                 <div class="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-150 shadow-sm hover:shadow-lg transition-all space-y-4">
                     <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -320,7 +319,6 @@
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Регулярная перекраска изделий из-за сбоев в температурном режиме полимеризации ЛКМ.</p>
                 </div>
 
-                <!-- 3. Низкая производительность -->
                 <div class="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-150 shadow-sm hover:shadow-lg transition-all space-y-4">
                     <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -333,7 +331,6 @@
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Покрасочный цех выступает «узким горлышком» всей фабрики из-за ручного перемещения рам.</p>
                 </div>
 
-                <!-- 4. Высокая зависимость от маляров -->
                 <div class="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-150 shadow-sm hover:shadow-lg transition-all space-y-4">
                     <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -346,7 +343,6 @@
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Ручной труд ведет к перерасходу ЛКМ, неравномерному прокрасу углов и кадровому дефициту.</p>
                 </div>
 
-                <!-- 5. Затянутый цикл сушки -->
                 <div class="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-150 shadow-sm hover:shadow-lg transition-all space-y-4">
                     <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -360,7 +356,6 @@
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Многочасовое естественное испарение занимает площади цеха и затягивает сроки отгрузки.</p>
                 </div>
 
-                <!-- 6. Нулевой уровень автоматизации -->
                 <div class="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-150 shadow-sm hover:shadow-lg transition-all space-y-4">
                     <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -376,13 +371,12 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 3 — РЕШЕНИЯ НОВАТЕК (БЕЗОШИБОЧНАЯ ЗАГРУЗКА КАРТИНКИ) -->
+    <!-- СЕКЦИЯ 3 — РЕШЕНИЯ НОВАТЕК (ВЫЧЕРКНУТАЯ НАДПИСЬ УБРАНА) -->
     <section id="solutions" class="py-16 sm:py-24 bg-white bg-topographic-waves">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-5 relative group">
                     <div class="relative bg-primary overflow-hidden rounded-2xl border border-gray-200/60 shadow-xl aspect-square flex items-center justify-center max-w-md mx-auto lg:max-w-none">
-                        <!-- Надежный каскад путей к картинке -->
                         <img src="izobrajenie_2024_08_16_010112817.jpg" 
                              onerror="this.src='izbrajenie_2024_08_13_183434322.png'; this.onerror=() => { this.src='izobrajenie_2024_08_15_235358756.png'; };" 
                              alt="Инженерные решения НОВАТЕК" 
@@ -437,18 +431,18 @@
                         </div>
                     </div>
 
-                    <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                        <a href="#contact" class="bg-primary hover:bg-secondary text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-colors border-b-2 border-accent shadow-md text-center">
+                    <!-- Вычеркнутая надпись убрана -->
+                    <div class="pt-2">
+                        <a href="#contact" class="bg-primary hover:bg-secondary text-white font-bold px-8 py-3.5 rounded-xl text-sm transition-colors border-b-2 border-accent shadow-md inline-block">
                             Обсудить ваш проект
                         </a>
-                        <span class="text-xs text-mutedText text-center sm:text-left">Инженеры подготовят концепт-проект за 3 рабочих дня.</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 4 — КАТЕГОРИИ ОБОРУДОВАНИЯ (С ТОПОГРАФИЧЕСКИМИ ЛИНИЯМИ) -->
+    <!-- СЕКЦИЯ 4 — КАТЕГОРИИ ОБОРУДОВАНИЯ (КАРТИНКА РОБОТОВ ЗАМЕНЕНА) -->
     <section id="equipment" class="py-16 sm:py-24 bg-lightBg bg-topographic-waves border-t border-b border-gray-150">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
@@ -540,11 +534,11 @@
                     </div>
                 </div>
 
-                <!-- Карточка 6 -->
+                <!-- Карточка 6: Заменена картинка (убраны рельсы ГАЗ, поставлен окрасочный робот) -->
                 <div class="bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
                     <div class="p-6 space-y-4">
                         <div class="h-44 rounded-xl overflow-hidden bg-primary relative">
-                            <img src="bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg" loading="lazy" alt="Окрасочные роботы" class="w-full h-full object-cover">
+                            <img src="izobrajenie_2024_08_16_010112817.jpg" onerror="this.src='izbrajenie_2024_08_13_183434322.png';" loading="lazy" alt="Окрасочные роботы" class="w-full h-full object-cover">
                             <span class="absolute bottom-2.5 left-2.5 bg-primary/90 text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase">SAMES / YASKAWA</span>
                         </div>
                         <h4 class="text-primary font-bold text-lg">Роботизированные ячейки</h4>
@@ -559,7 +553,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 5 — KPI ЭФФЕКТИВНОСТИ (С ТОПОГРАФИЧЕСКИМИ ЛИНИЯМИ) -->
+    <!-- СЕКЦИЯ 5 — KPI ЭФФЕКТИВНОСТИ (ИСПРАВЛЕНО: БЕЗ KREMLIN И "ДО МИКРОН") -->
     <section class="py-16 sm:py-24 bg-white bg-topographic-waves border-b border-gray-150">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
@@ -581,10 +575,11 @@
                     <h4 class="text-primary font-bold text-base sm:text-lg">Снижение брака ЛКМ</h4>
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Тонкая фильтрация и точный термобаланс убирают пыль, сорность и температурные сбои.</p>
                 </div>
+                <!-- Карточка с исправлением: без Kremlin и "до микрон" -->
                 <div class="border border-gray-150 p-6 sm:p-8 rounded-2xl bg-white/90 backdrop-blur-sm hover:bg-white transition-all shadow-sm space-y-2.5">
                     <div class="text-accent font-black text-3xl sm:text-5xl">до -35%</div>
                     <h4 class="text-primary font-bold text-base sm:text-lg">Экономия материалов</h4>
-                    <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Роботы-манипуляторы и дозаторы SAMES Kremlin наносят полимерный слой с точностью до микрона.</p>
+                    <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Роботы-манипуляторы и дозаторы SAMES наносят полимерный слой с точностью до микрон.</p>
                 </div>
                 <div class="border border-gray-150 p-6 sm:p-8 rounded-2xl bg-white/90 backdrop-blur-sm hover:bg-white transition-all shadow-sm space-y-2.5">
                     <div class="text-accent font-black text-3xl sm:text-5xl">до 80%</div>
@@ -605,7 +600,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ (С ТОПОГРАФИЧЕСКИМИ ЛИНИЯМИ) -->
+    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ -->
     <section id="projects" class="py-16 sm:py-20 bg-white bg-topographic-waves border-t border-b border-gray-150">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-8 sm:mb-10">
@@ -676,7 +671,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 7 — ПОЧЕМУ НОВАТЕК (С ТОПОГРАФИЧЕСКИМИ ЛИНИЯМИ) -->
+    <!-- СЕКЦИЯ 7 — ПОЧЕМУ НОВАТЕК (БЕЗ ISO 9001 И БЕЗ KREMLIN) -->
     <section id="whyus" class="py-16 sm:py-24 bg-white bg-topographic-waves">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
@@ -688,17 +683,19 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Карточка 1: убран хвост ISO 9001 -->
                 <div class="bg-white/90 backdrop-blur-sm border border-gray-150 p-6 rounded-2xl space-y-2.5 hover:shadow-md transition-all">
                     <h4 class="font-bold text-primary text-base sm:text-lg">Высокий уровень инжиниринга</h4>
-                    <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Конструкторы и программисты с опытом проектирования более 15 лет на базе стандартов ISO 9001.</p>
+                    <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Конструкторы и программисты с опытом проектирования более 15 лет.</p>
                 </div>
                 <div class="bg-white/90 backdrop-blur-sm border border-gray-150 p-6 rounded-2xl space-y-2.5 hover:shadow-md transition-all">
                     <h4 class="font-bold text-primary text-base sm:text-lg">Полная ответственность под ключ</h4>
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Никаких субподрядчиков. Сами изготавливаем конструкции, собираем щиты автоматики и настраиваем роботов.</p>
                 </div>
+                <!-- Карточка 3: убран Kremlin -->
                 <div class="bg-white/90 backdrop-blur-sm border border-gray-150 p-6 rounded-2xl space-y-2.5 hover:shadow-md transition-all">
                     <h4 class="font-bold text-primary text-base sm:text-lg">Сертифицированный партнер</h4>
-                    <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Авторизованный интегратор SAMES Kremlin и YASKAWA Robotics. Поставки оригинальных узлов.</p>
+                    <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Авторизованный интегратор SAMES и YASKAWA Robotics. Поставки оригинальных узлов.</p>
                 </div>
                 <div class="bg-white/90 backdrop-blur-sm border border-gray-150 p-6 rounded-2xl space-y-2.5 hover:shadow-md transition-all">
                     <h4 class="font-bold text-primary text-base sm:text-lg">Кастомный конструктив</h4>
@@ -716,7 +713,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 8 — ПРОЦЕСС ПРОЕКТА (ПОЛНОРАЗМЕРНЫЕ ЭТАПЫ С ДЕТАЛЬНОЙ РАСШИФРОВКОЙ) -->
+    <!-- СЕКЦИЯ 8 — ПРОЦЕСС ПРОЕКТА -->
     <section id="timeline" class="py-16 sm:py-24 bg-[#F8FAFC] bg-topographic-waves border-t border-b border-gray-150">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12 sm:mb-16">
@@ -828,7 +825,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ: НАШИ ЗАКАЗЧИКИ И ПАРТНЕРЫ (С ТОПОГРАФИЧЕСКИМИ ЛИНИЯМИ) -->
+    <!-- СЕКЦИЯ: НАШИ ЗАКАЗЧИКИ И ПАРТНЕРЫ -->
     <section id="partners" class="py-16 sm:py-24 bg-white bg-topographic-waves border-t border-gray-150">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 sm:mb-14">
@@ -912,7 +909,6 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#2C2C2C]">
-                <!-- Яндекс Карта -->
                 <div class="lg:col-span-6 min-h-[280px] sm:min-h-[350px] relative bg-gray-800">
                     <iframe 
                         src="https://yandex.ru/map-widget/v1/?ll=44.045618%2C56.297489&z=14&pt=44.045618,56.297489,pm2blm" 
@@ -923,7 +919,6 @@
                     </iframe>
                 </div>
 
-                <!-- Реквизиты -->
                 <div class="lg:col-span-6 p-6 sm:p-10 flex flex-col justify-center space-y-4 sm:space-y-6 bg-[#2C2C2C]">
                     <h3 class="text-xl sm:text-2xl font-bold tracking-tight">
                         ООО <span class="text-[#009EE0]">"НОВАТЕК"</span>
@@ -948,7 +943,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 10 — FAQ (ВСЕ 6 ВОПРОСОВ ВОССТАНОВЛЕНЫ) -->
+    <!-- СЕКЦИЯ 10 — FAQ -->
     <section id="faq" class="py-16 sm:py-24 bg-white bg-topographic-waves">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-12 sm:mb-16 space-y-3">
@@ -1029,7 +1024,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 11 — ФОРМА ТЗ (С ТОПОГРАФИЧЕСКИМИ ЛИНИЯМИ) -->
+    <!-- СЕКЦИЯ 11 — ФОРМА ТЗ -->
     <section id="contact" class="py-16 sm:py-24 bg-lightBg bg-topographic-waves border-t border-gray-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl border border-gray-150 shadow-xl p-6 sm:p-12 relative overflow-hidden">
@@ -1095,19 +1090,18 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
+    <!-- ПОДВАЛ: ДУБЛИРОВАНИЕ УБРАНО, ИНН/ОГРН УБРАНЫ, ЛОГОТИП БЕЗ БЕЛОГО ФОНА -->
     <footer class="bg-primary text-gray-400 text-xs sm:text-sm py-12 sm:py-16 border-t border-secondary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             <div class="lg:col-span-2 space-y-3">
-                <a href="#" class="flex items-center gap-2.5">
-                    <img src="./image001.png" alt="НОВАТЕК" class="h-9 w-auto object-contain">
-                    <span class="text-white font-black text-xl tracking-tight">NOVA<span class="text-accent">TEK</span></span>
+                <a href="#" class="inline-flex items-center">
+                    <img src="./image001.png" alt="НОВАТЕК" class="h-9 w-auto object-contain [mix-blend-mode:screen]">
                 </a>
                 <p class="text-xs leading-relaxed text-gray-400">
                     Инжиниринговый центр комплексного проектирования и запуска автоматизированных окрасочных комплексов под ключ.
                 </p>
                 <div class="text-[11px] text-gray-500 leading-relaxed">
-                    © 2026 ООО «НОВАТЕК». Все права защищены. <br>ИНН: 5262000000 | ОГРН: 1205200000000
+                    © 2026 ООО «НОВАТЕК». Все права защищены.
                 </div>
             </div>
 
@@ -1182,7 +1176,7 @@
             consent: {
                 title: "Согласие на обработку персональных данных",
                 html: `
-                    <p>Настоящим даю согласие ООО «НОВАТЕК» (ИНН: 5262000000, г. Нижний Новгород, ул. Ванеева, д. 127) на обработку моих контактных данных (ФИО, телефон, e-mail, файлы ТЗ) с целью консультирования и подготовки предложений на поставку оборудования.</p>
+                    <p>Настоящим даю согласие ООО «НОВАТЕК» на обработку моих контактных данных (ФИО, телефон, e-mail, файлы ТЗ) с целью консультирования и подготовки предложений на поставку оборудования.</p>
                 `
             },
             cookie: {
