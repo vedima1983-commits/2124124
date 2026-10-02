@@ -121,7 +121,6 @@
 
     <!-- Промышленный хедер -->
     <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-gray-150 transition-all duration-300">
-        <!-- Верхняя техническая панель: без ISO и без Kremlin -->
         <div class="bg-primary text-gray-400 text-xs py-2 px-6 lg:px-12 hidden lg:flex justify-between items-center border-b border-secondary">
             <div class="flex items-center gap-6">
                 <span class="flex items-center gap-2 text-gray-300 font-medium">
@@ -142,9 +141,7 @@
             </div>
         </div>
 
-        <!-- Основная панель навигации -->
         <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 h-20 flex items-center justify-between">
-            <!-- Логотип сдвинут влево -->
             <a href="#" class="flex items-center gap-4 group shrink-0">
                 <img src="./image001.png" alt="НОВАТЕК Логотип" class="h-10 sm:h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo-header').classList.remove('hidden')">
                 <div id="fallback-logo-header" class="hidden flex items-center">
@@ -156,7 +153,6 @@
                 </div>
             </a>
 
-            <!-- Навигация десктоп -->
             <div class="hidden lg:flex items-center gap-8 xl:gap-10">
                 <nav class="flex items-center gap-6 xl:gap-8">
                     <a href="#equipment" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">Оборудование</a>
@@ -168,7 +164,6 @@
                     <a href="#faq" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">FAQ</a>
                 </nav>
 
-                <!-- Обособленная кнопка -->
                 <div class="pl-6 border-l border-gray-200">
                     <a href="#contact" class="btn-header-gradient text-white font-bold px-6 py-2.5 rounded-xl text-xs sm:text-sm tracking-wide inline-flex items-center justify-center whitespace-nowrap border border-white/20 select-none">
                         Заказать проект
@@ -182,7 +177,6 @@
             </button>
         </div>
 
-        <!-- Мобильное меню -->
         <div id="mobileMenu" class="hidden lg:hidden bg-primary border-t border-secondary text-white w-full p-5 transition-all duration-300">
             <nav class="flex flex-col gap-3 text-sm">
                 <a href="#equipment" onclick="toggleMobileMenu()" class="py-1.5 border-b border-white/5 hover:text-accent">Оборудование</a>
@@ -201,9 +195,8 @@
         </div>
     </header>
 
-    <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO С ЦЕНТРИРОВАННЫМ ФОНОМ) -->
+    <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO) -->
     <section class="relative min-h-[80vh] sm:min-h-[85vh] flex items-center bg-[#0D1B2A] overflow-hidden py-12 sm:py-20">
-        <!-- Центрированное фоновое изображение для всех форматов экрана -->
         <img src="izbrajenie_2024_08_13_183434322.png" 
              onerror="this.src='izobrajenie_2024_08_13_183434322.png'; this.onerror=null;" 
              alt="Фон роботов НОВАТЕК" 
@@ -257,7 +250,6 @@
                 </div>
             </div>
 
-            <!-- Блок показателей справа -->
             <div class="lg:col-span-4 bg-[#1B263B]/90 backdrop-blur-lg border border-white/20 p-5 sm:p-8 rounded-2xl space-y-5 shadow-2xl">
                 <h3 class="text-white font-bold text-lg sm:text-xl border-b border-white/10 pb-3">Статистика инжиниринга</h3>
                 
@@ -546,11 +538,15 @@
                     </div>
                 </div>
 
-                <!-- Карточка 6 -->
+                <!-- Карточка 6: Роботизированные ячейки с вашим новым фото -->
                 <div class="bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
                     <div class="p-6 space-y-4">
                         <div class="h-44 rounded-xl overflow-hidden bg-primary relative">
-                            <img src="izobrajenie_2024_08_16_010112817.jpg" onerror="this.src='izbrajenie_2024_08_13_183434322.png';" loading="lazy" alt="Окрасочные роботы" class="w-full h-full object-cover">
+                            <img src="IMG_20261002_143617.jpg" 
+                                 onerror="this.src='izobrajenie_2024_08_16_010112817.jpg'; this.onerror=null;" 
+                                 loading="lazy" 
+                                 alt="Роботизированные ячейки окраски" 
+                                 class="w-full h-full object-cover">
                             <span class="absolute bottom-2.5 left-2.5 bg-primary/90 text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase">SAMES / YASKAWA</span>
                         </div>
                         <h4 class="text-primary font-bold text-lg">Роботизированные ячейки</h4>
@@ -611,7 +607,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ (СЕТКА 2x2) -->
+    <!-- СЕКЦИЯ 6 — РЕАЛИЗОВАННЫЕ ПРОЕКТЫ (ФИКСИРОВАННЫЙ КАДР, БЕЗ СКАЧКОВ ВЫСОТЫ) -->
     <section id="projects" class="py-16 sm:py-20 bg-white bg-topographic-waves border-t border-b border-gray-150">
         <div class="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 sm:mb-14 text-center">
@@ -622,16 +618,17 @@
                 <div class="w-16 h-1.5 bg-accent mx-auto rounded-full mt-4"></div>
             </div>
 
-            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-stretch">
                 <!-- ПРОЕКТ 1: Либхерр -->
-                <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                    <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black aspect-[4/3] sm:aspect-[16/10] flex items-center justify-center p-2 group">
-                        <img id="proj-img-0" src="izobrajenie_2024_08_15_235358756.png" class="max-w-full max-h-full object-contain p-2 transition-opacity duration-300 select-none">
+                <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-full">
+                    <!-- Жестко зафиксированная высота фото без прыжков -->
+                    <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black h-[280px] sm:h-[360px] md:h-[400px] xl:h-[420px] w-full flex items-center justify-center p-2 group overflow-hidden">
+                        <img id="proj-img-0" src="izobrajenie_2024_08_15_235358756.png" class="w-full h-full object-contain p-2 transition-opacity duration-300 pointer-events-none select-none">
                         <div id="proj-count-0" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 5</div>
-                        <button onclick="changePhoto(0, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100">
+                        <button onclick="changePhoto(0, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                         </button>
-                        <button onclick="changePhoto(0, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100">
+                        <button onclick="changePhoto(0, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                         </button>
                     </div>
@@ -661,15 +658,15 @@
                     </div>
                 </div>
 
-                <!-- ПРОЕКТ 2: ГАЗ -->
-                <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                    <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black aspect-[4/3] sm:aspect-[16/10] flex items-center justify-center p-2 group">
-                        <img id="proj-img-1" src="bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg" class="max-w-full max-h-full object-contain p-2 transition-opacity duration-300 select-none">
-                        <div id="proj-count-1" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 6</div>
-                        <button onclick="changePhoto(1, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100">
+                <!-- ПРОЕКТ 2: ГАЗ (С ДОБАВЛЕННЫМИ ФОТОГРАФИЯМИ И БЕЗ СКАЧКОВ) -->
+                <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-full">
+                    <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black h-[280px] sm:h-[360px] md:h-[400px] xl:h-[420px] w-full flex items-center justify-center p-2 group overflow-hidden">
+                        <img id="proj-img-1" src="IMG_20261002_143828.jpg" onerror="this.src='bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg';" class="w-full h-full object-contain p-2 transition-opacity duration-300 pointer-events-none select-none">
+                        <div id="proj-count-1" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 9</div>
+                        <button onclick="changePhoto(1, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                         </button>
-                        <button onclick="changePhoto(1, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100">
+                        <button onclick="changePhoto(1, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                         </button>
                     </div>
@@ -700,14 +697,14 @@
                 </div>
 
                 <!-- ПРОЕКТ 3: Автокомпонент -->
-                <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                    <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black aspect-[4/3] sm:aspect-[16/10] flex items-center justify-center p-2 group">
-                        <img id="proj-img-2" src="photo_5379886459311489002_y.jpg" class="max-w-full max-h-full object-contain p-2 transition-opacity duration-300 select-none">
+                <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-full">
+                    <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black h-[280px] sm:h-[360px] md:h-[400px] xl:h-[420px] w-full flex items-center justify-center p-2 group overflow-hidden">
+                        <img id="proj-img-2" src="photo_5379886459311489002_y.jpg" class="w-full h-full object-contain p-2 transition-opacity duration-300 pointer-events-none select-none">
                         <div id="proj-count-2" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 4</div>
-                        <button onclick="changePhoto(2, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100">
+                        <button onclick="changePhoto(2, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                         </button>
-                        <button onclick="changePhoto(2, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100">
+                        <button onclick="changePhoto(2, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                         </button>
                     </div>
@@ -742,14 +739,14 @@
                 </div>
 
                 <!-- ПРОЕКТ 4: Профессионал -->
-                <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                    <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black aspect-[4/3] sm:aspect-[16/10] flex items-center justify-center p-2 group">
-                        <img id="proj-img-3" src="izobrajenie_2024_08_15_235910484.png" class="max-w-full max-h-full object-contain p-2 transition-opacity duration-300 select-none">
+                <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-full">
+                    <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black h-[280px] sm:h-[360px] md:h-[400px] xl:h-[420px] w-full flex items-center justify-center p-2 group overflow-hidden">
+                        <img id="proj-img-3" src="izobrajenie_2024_08_15_235910484.png" class="w-full h-full object-contain p-2 transition-opacity duration-300 pointer-events-none select-none">
                         <div id="proj-count-3" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 5</div>
-                        <button onclick="changePhoto(3, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100">
+                        <button onclick="changePhoto(3, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                         </button>
-                        <button onclick="changePhoto(3, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100">
+                        <button onclick="changePhoto(3, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                         </button>
                     </div>
@@ -782,7 +779,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -835,7 +831,7 @@
                 <h2 class="text-primary font-bold text-2xl sm:text-4xl lg:text-5xl tracking-tight">
                     Процесс реализации проекта под ключ
                 </h2>
-                <div class="w-16 sm:w-20 h-1.5 bg-accent rounded-full mt-3"></div>
+                <div class="w-16 h-1.5 bg-accent rounded-full mt-3"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
@@ -1191,7 +1187,6 @@
     <footer class="bg-primary text-gray-400 text-xs sm:text-sm py-12 sm:py-16 border-t border-secondary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12">
             
-            <!-- Информационный блок: на смартфонах занимает всю ширину (2 колонки) -->
             <div class="col-span-2 space-y-3">
                 <a href="#" class="inline-flex items-center">
                     <img src="./image001.png" alt="НОВАТЕК" class="h-9 sm:h-10 w-auto object-contain transparent-logo-footer">
@@ -1204,7 +1199,6 @@
                 </div>
             </div>
 
-            <!-- Колонка 1 в мобильной сетке -->
             <div class="space-y-2.5">
                 <h5 class="text-white font-bold text-xs uppercase tracking-wider">Каталог</h5>
                 <ul class="space-y-2 text-xs">
@@ -1215,7 +1209,6 @@
                 </ul>
             </div>
 
-            <!-- Колонка 2 в мобильной сетке -->
             <div class="space-y-2.5">
                 <h5 class="text-white font-bold text-xs uppercase tracking-wider">Инжиниринг</h5>
                 <ul class="space-y-2 text-xs">
@@ -1226,7 +1219,6 @@
                 </ul>
             </div>
 
-            <!-- Колонка 1 второго ряда в мобильной сетке -->
             <div class="space-y-2.5">
                 <h5 class="text-white font-bold text-xs uppercase tracking-wider">Документы</h5>
                 <ul class="space-y-2 text-xs">
@@ -1237,7 +1229,6 @@
                 </ul>
             </div>
 
-            <!-- Колонка 2 второго ряда в мобильной сетке -->
             <div class="space-y-2.5">
                 <h5 class="text-white font-bold text-xs uppercase tracking-wider">Контакты</h5>
                 <ul class="space-y-2 text-xs text-gray-400">
@@ -1340,7 +1331,7 @@
             ic.classList.toggle('rotate-180');
         }
 
-        // Данные 4 независимых проектов с персональными фото-слайдерами
+        // Галереи проектов с расширенным списком фото для ГАЗ
         const projectGalleries = [
             {
                 current: 0,
@@ -1355,6 +1346,9 @@
             {
                 current: 0,
                 images: [
+                    "IMG_20261002_143828.jpg",
+                    "IMG_20261002_143824.jpg",
+                    "IMG_20261002_143814.jpg",
                     "bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg",
                     "00c0dc98_2f7c_4083_bba3_b56ab295df60.jpg",
                     "0ae59fe9_0766_418c_9566_21baa36a7777.jpg",
