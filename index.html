@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="overflow-x-hidden">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -34,7 +34,6 @@
     </script>
     <style>
         html, body {
-            overflow-x: hidden;
             width: 100%;
             margin: 0;
             padding: 0;
@@ -88,19 +87,9 @@
             mix-blend-mode: screen;
             filter: contrast(125%) brightness(115%);
         }
-        
-        /* Стили для логотипов на темном фоне */
-        .partner-logo-dark {
-            filter: brightness(0) invert(1);
-            opacity: 0.85;
-            transition: opacity 0.3s ease;
-        }
-        .partner-logo-dark:hover {
-            opacity: 1;
-        }
     </style>
 </head>
-<body class="bg-neutralBg text-textColor font-sans antialiased overflow-x-hidden w-full">
+<body class="bg-neutralBg text-textColor font-sans antialiased w-full">
 
     <!-- Уведомление об успешной отправке заявки -->
     <div id="toastNotification" class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 ease-out max-w-sm sm:max-w-md w-full bg-primary border-l-4 border-accent shadow-2xl p-4 sm:p-5 rounded-2xl flex items-start gap-3 pointer-events-none">
@@ -129,8 +118,8 @@
         </div>
     </div>
 
-    <!-- Промышленный закрепленный хедер -->
-    <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-gray-150 transition-all duration-300 shadow-sm">
+    <!-- Жестко фиксированная шапка на весь сайт (Fixed Header) -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-150 shadow-sm transition-all duration-300">
         <div class="bg-primary text-gray-400 text-xs py-2 px-6 lg:px-12 hidden lg:flex justify-between items-center border-b border-secondary">
             <div class="flex items-center gap-6">
                 <span class="flex items-center gap-2 text-gray-300 font-medium">
@@ -163,6 +152,7 @@
                 </div>
             </a>
 
+            <!-- Навигация с безопасным отступом слева от логотипа -->
             <div class="hidden lg:flex items-center gap-6 xl:gap-8 ml-6 lg:ml-12 xl:ml-16">
                 <nav class="flex items-center gap-5 xl:gap-7">
                     <a href="#equipment" class="text-primary hover:text-accent font-semibold text-sm xl:text-base transition-colors py-2">Оборудование</a>
@@ -205,8 +195,8 @@
         </div>
     </header>
 
-    <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO) -->
-    <section class="relative min-h-[80vh] sm:min-h-[85vh] flex items-center bg-[#0D1B2A] overflow-hidden py-12 sm:py-20">
+    <!-- СЕКЦИЯ 1 — ГЛАВНЫЙ ЭКРАН (HERO) С ОТСТУПОМ СВЕРХУ ПОД ФИКСИРОВАННУЮ ШАПКУ -->
+    <section class="relative min-h-[85vh] flex items-center bg-[#0D1B2A] overflow-hidden pt-28 lg:pt-36 pb-12 sm:pb-20">
         <img src="izbrajenie_2024_08_13_183434322.png" 
              onerror="this.src='izobrajenie_2024_08_13_183434322.png'; this.onerror=null;" 
              alt="Фон роботов НОВАТЕК" 
@@ -935,7 +925,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ: НАШИ КЛИЕНТЫ (ТЕМНЫЙ ФОН КАК НА СКРИНШОТЕ, БЕЗ 1.jpg) -->
+    <!-- СЕКЦИЯ: НАШИ КЛИЕНТЫ (С ТЕМНЫМ ФОНОМ ИТОГОВЫЙ СПИСОК БЕЗ 1.jpg) -->
     <section id="partners" class="py-16 sm:py-24 bg-secondary text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
             <div class="space-y-3 max-w-2xl mx-auto">
@@ -946,47 +936,47 @@
                 <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
             </div>
 
-            <!-- Сетка логотипов без 1.jpg, с адаптивным выравниванием на темном фоне -->
+            <!-- Сетка логотипов с именами файлов из хостинга (исключая 1.jpg) -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 items-center justify-items-center">
-                <!-- 2. Нефаз (2.png / 2.jpg) -->
+                <!-- 2. Нефаз -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="2.png" onerror="this.src='2.jpg'; this.onerror=null;" alt="НЕФАЗ" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="2.jpg" onerror="this.src='2.png'; this.onerror=null;" alt="НЕФАЗ" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 3. AGR Automotive Group (3.png / 3.jpg) -->
+                <!-- 3. AGR Automotive Group -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="3.png" onerror="this.src='3.jpg'; this.onerror=null;" alt="AGR Automotive Group" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="3.jpg" onerror="this.src='3.png'; this.onerror=null;" alt="AGR Automotive Group" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 4. Lada Ижевск (4.png / 4.jpg) -->
+                <!-- 4. Lada Ижевск -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="4.png" onerror="this.src='4.jpg'; this.onerror=null;" alt="Lada Ижевск" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="4.jpg" onerror="this.src='4.png'; this.onerror=null;" alt="Lada Ижевск" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 5. Москвич (5.png / 5.jpg) -->
+                <!-- 5. Москвич -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="5.png" onerror="this.src='5.jpg'; this.onerror=null;" alt="Москвич" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="5.jpg" onerror="this.src='5.png'; this.onerror=null;" alt="Москвич" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 6. ГАЗ Группа (6.png / 6.jpg) -->
+                <!-- 6. ГАЗ Группа -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="6.png" onerror="this.src='6.jpg'; this.onerror=null;" alt="ГАЗ Группа" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="6.jpg" onerror="this.src='6.png'; this.onerror=null;" alt="ГАЗ Группа" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 7. Lada (7.png / 7.jpg) -->
+                <!-- 7. Lada -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="7.png" onerror="this.src='7.jpg'; this.onerror=null;" alt="Lada" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="7.jpg" onerror="this.src='7.png'; this.onerror=null;" alt="Lada" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 8. Профессионал (8.png / 8.jpg) -->
+                <!-- 8. Профессионал -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="8.png" onerror="this.src='8.jpg'; this.onerror=null;" alt="Профессионал" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="8.jpg" onerror="this.src='8.png'; this.onerror=null;" alt="Профессионал" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 9. Volgabus (9.png / 9.jpg) -->
+                <!-- 9. Volgabus -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="9.png" onerror="this.src='9.jpg'; this.onerror=null;" alt="VOLGABUS" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="9.jpg" onerror="this.src='9.png'; this.onerror=null;" alt="VOLGABUS" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 10. Чайка Сервис (10.png / 10.jpg) -->
+                <!-- 10. Чайка Сервис -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="10.png" onerror="this.src='10.jpg'; this.onerror=null;" alt="Чайка Сервис" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="10.jpg" onerror="this.src='10.png'; this.onerror=null;" alt="Чайка Сервис" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
-                <!-- 11. RUS COMTRANS (11.png / 11.jpg) -->
+                <!-- 11. RUS COMTRANS -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
-                    <img src="11.png" onerror="this.src='11.jpg'; this.onerror=null;" alt="RUS COMTRANS" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
+                    <img src="11.jpg" onerror="this.src='11.png'; this.onerror=null;" alt="RUS COMTRANS" class="max-h-16 w-auto object-contain filter brightness-0 invert opacity-85 hover:opacity-100 transition-opacity">
                 </div>
                 <!-- 12. DEMFA -->
                 <div class="w-full h-28 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-accent transition-all">
