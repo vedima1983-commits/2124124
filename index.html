@@ -538,7 +538,7 @@
                     </div>
                 </div>
 
-                <!-- Карточка 6: Роботизированные ячейки с вашим новым фото -->
+                <!-- Карточка 6: Роботизированные ячейки -->
                 <div class="bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
                     <div class="p-6 space-y-4">
                         <div class="h-44 rounded-xl overflow-hidden bg-primary relative">
@@ -583,6 +583,7 @@
                     <h4 class="text-primary font-bold text-base sm:text-lg">Снижение брака ЛКМ</h4>
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Тонкая фильтрация и точный термобаланс убирают пыль, сорность и температурные сбои.</p>
                 </div>
+                <!-- Карточка: без Kremlin и "до микрон" -->
                 <div class="border border-gray-150 p-6 sm:p-8 rounded-2xl bg-white/90 backdrop-blur-sm hover:bg-white transition-all shadow-sm space-y-2.5">
                     <div class="text-accent font-black text-3xl sm:text-5xl">до -35%</div>
                     <h4 class="text-primary font-bold text-base sm:text-lg">Экономия материалов</h4>
@@ -619,12 +620,11 @@
             </div>
 
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-                <!-- ПРОЕКТ 1: Либхерр -->
+                <!-- ПРОЕКТ 1: Либхерр (4 слайда, битый 4-й удален) -->
                 <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-full">
-                    <!-- Жестко зафиксированная высота фото без прыжков -->
                     <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black h-[280px] sm:h-[360px] md:h-[400px] xl:h-[420px] w-full flex items-center justify-center p-2 group overflow-hidden">
                         <img id="proj-img-0" src="izobrajenie_2024_08_15_235358756.png" class="w-full h-full object-contain p-2 transition-opacity duration-300 pointer-events-none select-none">
-                        <div id="proj-count-0" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 5</div>
+                        <div id="proj-count-0" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 4</div>
                         <button onclick="changePhoto(0, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                         </button>
@@ -658,11 +658,11 @@
                     </div>
                 </div>
 
-                <!-- ПРОЕКТ 2: ГАЗ (С ДОБАВЛЕННЫМИ ФОТОГРАФИЯМИ И БЕЗ СКАЧКОВ) -->
+                <!-- ПРОЕКТ 2: ГАЗ (8 слайдов, лишний слайд удален) -->
                 <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-full">
                     <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black h-[280px] sm:h-[360px] md:h-[400px] xl:h-[420px] w-full flex items-center justify-center p-2 group overflow-hidden">
                         <img id="proj-img-1" src="IMG_20261002_143828.jpg" onerror="this.src='bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg';" class="w-full h-full object-contain p-2 transition-opacity duration-300 pointer-events-none select-none">
-                        <div id="proj-count-1" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 9</div>
+                        <div id="proj-count-1" class="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">1 / 8</div>
                         <button onclick="changePhoto(1, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10 shadow-lg opacity-0 group-hover:opacity-100 z-10">
                             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
                         </button>
@@ -1183,7 +1183,7 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ: МОБИЛЬНАЯ ВЕРСИЯ В 2 СТОЛБИКА, ОРИГИНАЛЬНЫЙ ЛОГОТИП БЕЗ БЕЛОГО ФОНА -->
+    <!-- ПОДВАЛ -->
     <footer class="bg-primary text-gray-400 text-xs sm:text-sm py-12 sm:py-16 border-t border-secondary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12">
             
@@ -1331,7 +1331,7 @@
             ic.classList.toggle('rotate-180');
         }
 
-        // Галереи проектов с расширенным списком фото для ГАЗ
+        // Данные 4 независимых проектов с персональными фото-слайдерами
         const projectGalleries = [
             {
                 current: 0,
@@ -1339,7 +1339,6 @@
                     "izobrajenie_2024_08_15_235358756.png",
                     "izobrajenie_2024_08_15_235339423.png",
                     "izobrajenie_2024_08_15_235348690.png",
-                    "izbrajenie_2024_08_13_183434322.png",
                     "izobrajenie_2024_11_08_110642323.png"
                 ]
             },
@@ -1347,7 +1346,6 @@
                 current: 0,
                 images: [
                     "IMG_20261002_143828.jpg",
-                    "IMG_20261002_143824.jpg",
                     "IMG_20261002_143814.jpg",
                     "bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg",
                     "00c0dc98_2f7c_4083_bba3_b56ab295df60.jpg",
