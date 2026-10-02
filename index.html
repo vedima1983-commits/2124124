@@ -583,7 +583,6 @@
                     <h4 class="text-primary font-bold text-base sm:text-lg">Снижение брака ЛКМ</h4>
                     <p class="text-mutedText text-xs sm:text-sm leading-relaxed">Тонкая фильтрация и точный термобаланс убирают пыль, сорность и температурные сбои.</p>
                 </div>
-                <!-- Карточка: без Kremlin и "до микрон" -->
                 <div class="border border-gray-150 p-6 sm:p-8 rounded-2xl bg-white/90 backdrop-blur-sm hover:bg-white transition-all shadow-sm space-y-2.5">
                     <div class="text-accent font-black text-3xl sm:text-5xl">до -35%</div>
                     <h4 class="text-primary font-bold text-base sm:text-lg">Экономия материалов</h4>
@@ -620,7 +619,7 @@
             </div>
 
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-                <!-- ПРОЕКТ 1: Либхерр (4 слайда, битый 4-й удален) -->
+                <!-- ПРОЕКТ 1: Либхерр -->
                 <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-full">
                     <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black h-[280px] sm:h-[360px] md:h-[400px] xl:h-[420px] w-full flex items-center justify-center p-2 group overflow-hidden">
                         <img id="proj-img-0" src="izobrajenie_2024_08_15_235358756.png" class="w-full h-full object-contain p-2 transition-opacity duration-300 pointer-events-none select-none">
@@ -658,7 +657,7 @@
                     </div>
                 </div>
 
-                <!-- ПРОЕКТ 2: ГАЗ (8 слайдов, лишний слайд удален) -->
+                <!-- ПРОЕКТ 2: ГАЗ (с добавленными фото) -->
                 <div class="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-full">
                     <div class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black h-[280px] sm:h-[360px] md:h-[400px] xl:h-[420px] w-full flex items-center justify-center p-2 group overflow-hidden">
                         <img id="proj-img-1" src="IMG_20261002_143828.jpg" onerror="this.src='bf20a5ed_6bbb_47fa_9abc_8bcf6a96868d.jpg';" class="w-full h-full object-contain p-2 transition-opacity duration-300 pointer-events-none select-none">
@@ -831,7 +830,7 @@
                 <h2 class="text-primary font-bold text-2xl sm:text-4xl lg:text-5xl tracking-tight">
                     Процесс реализации проекта под ключ
                 </h2>
-                <div class="w-16 h-1.5 bg-accent rounded-full mt-3"></div>
+                <div class="w-16 sm:w-20 h-1.5 bg-accent rounded-full mt-3"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
@@ -1225,7 +1224,7 @@
                     <li><button type="button" onclick="openPolicyModal('privacy')" class="hover:text-accent text-left">Политика ПДн (152-ФЗ)</button></li>
                     <li><button type="button" onclick="openPolicyModal('consent')" class="hover:text-accent text-left">Согласие на обработку</button></li>
                     <li><button type="button" onclick="openPolicyModal('cookie')" class="hover:text-accent text-left">Политика Cookie</button></li>
-                    <li><button type="button" onclick="openPolicyModal('terms')" class="hover:text-accent text-left">Оферта и соглашение</button></li>
+                    <li><button type="button" onclick="openPolicyModal('terms')" class="hover:text-accent text-left">Политика Оферты</button></li>
                 </ul>
             </div>
 
@@ -1331,7 +1330,7 @@
             ic.classList.toggle('rotate-180');
         }
 
-        // Данные 4 независимых проектов с персональными фото-слайдерами
+        // Замена и добавление новых графических логотипов в блоке партнеров
         const projectGalleries = [
             {
                 current: 0,
