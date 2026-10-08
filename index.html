@@ -109,4 +109,69 @@
             background-image: 
                 radial-gradient(ellipse 1200px 700px at -10% 20%, rgba(0, 158, 224, 0.05) 0%, transparent 60%),
                 radial-gradient(ellipse 900px 900px at 110% 80%, rgba(13, 27, 42, 0.04) 0%, transparent 60%),
-                url("data:image/svg+xml,%3Csvg width='1440' height='900' viewBox='0 0 1440 900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-100 150 C 350 50, 750 400, 1550 150' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.08'/%3E%3Cpath d='M-100 220 C 370 120, 770 470, 1550 220' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.06'/%3E%3Cpath d='M-100 290 C 390 190, 790 540, 1550 290' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.05'/%3E%3Cpath d='M-100 360 C 410 260, 810 610, 1550 360' stroke='%230D1B2A' stroke-width='1.2' stroke-opacity='0.04'/%3E%3Cpath d='M-100 600 C 450 850, 950 500, 1550 750' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.06'/%3E%3Cpath d='M-100 670 C 470 920, 970 570, 1550 820' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.05'/%3E%3Cpath d='M-100 740 C 490 990, 990 640, 1550
+                url("data:image/svg+xml,%3Csvg width='1440' height='900' viewBox='0 0 1440 900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-100 150 C 350 50, 750 400, 1550 150' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.08'/%3E%3Cpath d='M-100 220 C 370 120, 770 470, 1550 220' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.06'/%3E%3Cpath d='M-100 290 C 390 190, 790 540, 1550 290' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.05'/%3E%3Cpath d='M-100 360 C 410 260, 810 610, 1550 360' stroke='%230D1B2A' stroke-width='1.2' stroke-opacity='0.04'/%3E%3Cpath d='M-100 600 C 450 850, 950 500, 1550 750' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.06'/%3E%3Cpath d='M-100 670 C 470 920, 970 570, 1550 820' stroke='%23009EE0' stroke-width='1.2' stroke-opacity='0.05'/%3E%3Cpath d='M-100 740 C 490 990, 990 640, 1550 890' stroke='%230D1B2A' stroke-width='1.2' stroke-opacity='0.04'/%3E%3C/svg%3E");
+            background-repeat: repeat-y;
+            background-size: 100% auto;
+        }
+
+        /* Переливающаяся лаконичная кнопка шапки */
+        .btn-header-gradient {
+            background: linear-gradient(135deg, #0D1B2A 0%, #162a45 40%, #007CA8 80%, #009EE0 100%);
+            background-size: 250% auto;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 14px rgba(0, 158, 224, 0.25);
+        }
+        .btn-header-gradient:hover {
+            background-position: right center;
+            box-shadow: 0 6px 20px rgba(0, 158, 224, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .transparent-logo-footer {
+            mix-blend-mode: screen;
+            filter: contrast(125%) brightness(115%);
+        }
+    </style>
+</head>
+<body class="bg-neutralBg text-textColor font-sans antialiased w-full">
+
+    <!-- Уведомление об успешной отправке заявки -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 ease-out max-w-sm sm:max-w-md w-full bg-primary border-l-4 border-accent shadow-2xl p-4 sm:p-5 rounded-2xl flex items-start gap-3 pointer-events-none">
+        <div class="text-accent shrink-0 mt-0.5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <div>
+            <h4 class="text-white font-bold text-sm sm:text-base" id="toastTitle">Заявка отправлена</h4>
+            <p class="text-gray-300 text-xs sm:text-sm mt-1" id="toastMessage">Инженер департамента окрасочных технологий свяжется с вами для уточнения ТЗ.</p>
+        </div>
+    </div>
+
+    <!-- Баннер согласия на использование файлов Cookie (152-ФЗ / РКН) -->
+    <div id="cookieBanner" class="fixed bottom-0 inset-x-0 z-50 bg-[#0D1B2A]/95 backdrop-blur-md border-t border-white/10 text-white p-4 sm:p-5 shadow-2xl transition-transform duration-500 translate-y-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-xs sm:text-sm text-gray-300 leading-relaxed text-center md:text-left">
+                Мы используем файлы cookie и сервисы сбора технических данных для обеспечения корректной работы сайта в соответствии с Федеральным законом № 152-ФЗ. Продолжая использовать сайт, вы соглашаетесь с условиями 
+                <button type="button" onclick="openPolicyModal('privacy')" class="text-accent underline hover:text-white transition-colors">Политики обработки персональных данных</button> и 
+                <button type="button" onclick="openPolicyModal('cookie')" class="text-accent underline hover:text-white transition-colors">Политики файлов cookie</button>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button onclick="acceptCookies()" class="bg-accent hover:bg-accentDark text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition shadow-md">
+                    Принять
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Закрепленная шапка сайта (Fixed на весь сайт) -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-150 shadow-sm transition-all duration-300">
+        <div class="bg-primary text-gray-400 text-xs py-2 px-6 lg:px-12 hidden lg:flex justify-between items-center border-b border-secondary">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2 text-gray-300 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    Инжиниринговый центр активен
+                </span>
+                <span class="border-l border-gray-700 pl-6">Статус: официальный интегратор SAMES / YASKAWA</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="mailto:info@novatek-e.com" class="hover:text-accent transition-colors flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l
